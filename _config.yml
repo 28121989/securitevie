@@ -3,7 +3,7 @@ description: "Agir pour sauver des vies au quotidien"
 lang: fr
 # Adresse du site : 28121989.github.io/securitevie
 # Si vous achetez un nom de domaine plus tard, remplacez par : baseurl: ""
-baseurl: "/securitevie"
+baseurl: ""
 collections:
   actualites:
     output: true
