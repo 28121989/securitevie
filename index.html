@@ -32,13 +32,34 @@
 <div class="boutons"><a class="bouton" href="#domaines">Découvrir nos domaines</a><a class="bouton contour" href="#contact">Devenir partenaire</a></div>
 </div></section>
 
-<section id="mission"><div class="bloc deux-col">
+<section id="mission"><div class="bloc">
+<div class="deux-col">
 <div><p class="surtitre">Qui sommes-nous</p><h2>Une ONG ivoirienne au service des communautés</h2></div>
 <div class="pile">
-<p>Créée le {{ infos.date_creation }}, l'ONG Sécurité Vie a pour mission de prévenir les risques qui menacent la vie et la santé des populations, en particulier des jeunes, des femmes et des enfants vulnérables.</p>
-<p>Son siège est à Yamoussoukro et elle dispose de bureaux techniques à {{ infos.bureaux | join: ", " }} et dans d'autres localités du pays, au plus près des communautés.</p>
-<p>Notre approche s'appuie sur la sensibilisation de proximité, l'accompagnement des communautés et le partenariat avec les autorités, les entreprises et les bailleurs de fonds.</p>
+<p>Créée le {{ infos.date_creation }}, l'ONG Sécurité Vie (OSV) a son siège à Yamoussoukro et dispose de bureaux techniques à {{ infos.bureaux | join: ", " }} et dans d'autres localités du pays, au plus près des communautés.</p>
 {% if infos.agrement and infos.agrement != "" %}<p><strong>{{ infos.agrement }}</strong></p>{% endif %}
+</div>
+</div>
+{% assign ap = site.data.apropos %}
+<div class="vm">
+<div class="vm-carte vm-vision"><p class="vm-titre">Notre vision</p><p>{{ ap.vision }}</p></div>
+<div class="vm-carte vm-mission"><p class="vm-titre">Notre mission</p><p>{{ ap.mission }}</p></div>
+</div>
+<div class="deux-col" style="margin-top:56px">
+<div>
+<h3 class="sous-titre">Nos valeurs</h3>
+<div class="valeurs">
+{% for v in ap.valeurs %}<div class="valeur"><p class="valeur-titre">{{ v.titre }}</p><p>{{ v.texte }}</p></div>
+{% endfor %}
+</div>
+</div>
+<div>
+<h3 class="sous-titre">Nos objectifs</h3>
+<ol class="objectifs">
+{% for o in ap.objectifs %}<li><span class="num">{{ forloop.index }}</span><span>{{ o }}</span></li>
+{% endfor %}
+</ol>
+</div>
 </div>
 </div></section>
 
