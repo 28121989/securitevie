@@ -1,0 +1,14 @@
+vitesse: 6
+diapos:
+  - image: "/images/accueil-1-dabakala.jpg"
+    legende: "Sensibilisation VIH/SIDA – PCR-CI, Dabakala"
+  - image: "/images/accueil-2-kong.jpg"
+    legende: "Sensibilisation VIH/SIDA – PCR-CI, Kong"
+  - image: "/images/accueil-3-femmes.jpg"
+    legende: "Activité communautaire avec les femmes, en partenariat avec Mafad"
+  - image: "/images/accueil-4-cedeao.jpg"
+    legende: "Atelier CEDEAO – Paix, sécurité et gouvernance"
+  - image: "/images/accueil-5-atelier.jpg"
+    legende: "Atelier Paix, sécurité et gouvernance"
+  - image: "/images/accueil-6-equipe.jpg"
+    legende: "Séance de travail de l'équipe OSV"
