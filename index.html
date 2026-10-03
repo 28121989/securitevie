@@ -115,9 +115,6 @@
 </article>
 {% endfor %}
 </div>
-{% if infos.partenaires.size > 0 %}
-<div class="partenaires"><p><strong>Ils nous font confiance :</strong></p>{% for p in infos.partenaires %}<p>{{ p }}</p>{% endfor %}</div>
-{% endif %}
 </div></section>
 
 <section id="actualites" class="blanc"><div class="bloc">
@@ -150,6 +147,40 @@
 </div>
 </div></section>
 
-<footer class="pied"><div class="bloc"><p>© {{ site.time | date: "%Y" }} ONG Sécurité Vie (OSV) · Yamoussoukro</p><p>Agir pour sauver des vies au quotidien</p></div></footer>
+{% assign pa = site.data.partenaires %}
+{% if pa.logos and pa.logos.size > 0 %}
+<section class="partenaires-bande" aria-labelledby="titre-partenaires"><div class="bloc">
+<h2 id="titre-partenaires" class="titre-partenaires">{{ pa.titre | default: "Ils nous font confiance" }}</h2>
+<ul class="logos">
+{% for p in pa.logos %}<li class="logo-carte"><img src="{{ p.logo | relative_url }}" alt="{{ p.nom | escape }}" title="{{ p.nom | escape }}" loading="lazy"></li>
+{% endfor %}</ul>
+</div></section>
+{% endif %}
+
+<footer class="pied">
+<div class="bloc pied-haut">
+<div class="pied-col pied-marque">
+{% if infos.logo and infos.logo != "" %}<img src="{{ infos.logo | relative_url }}" alt="Logo ONG Sécurité Vie" class="pied-logo">{% endif %}
+<p class="pied-nom">ONG SÉCURITÉ VIE</p>
+<p class="pied-slogan">Agir pour sauver des vies au quotidien</p>
+</div>
+<div class="pied-col">
+<p class="pied-titre">Nous contacter</p>
+<p>Siège : {{ infos.adresse }}</p>
+<p>Bureaux techniques : {{ infos.bureaux | join: ", " }}</p>
+{% if infos.telephone and infos.telephone != "" %}<p>Tél. : {{ infos.telephone }}</p>{% endif %}
+{% if infos.email and infos.email != "" %}<p><a href="mailto:{{ infos.email }}">{{ infos.email }}</a></p>{% endif %}
+</div>
+<div class="pied-col">
+<p class="pied-titre">Navigation</p>
+<p><a href="#mission">Qui sommes-nous</a></p>
+<p><a href="#domaines">Nos domaines</a></p>
+<p><a href="#actions">Nos actions</a></p>
+<p><a href="#actualites">Actualités</a></p>
+<p><a href="#contact">Contact</a></p>
+</div>
+</div>
+<div class="pied-bas"><div class="bloc"><p>© {{ site.time | date: "%Y" }} ONG Sécurité Vie (OSV) · Yamoussoukro, Côte d'Ivoire</p>{% if infos.agrement and infos.agrement != "" %}<p>{{ infos.agrement }}</p>{% endif %}</div></div>
+</footer>
 </body>
 </html>

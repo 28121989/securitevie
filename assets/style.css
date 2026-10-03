@@ -99,3 +99,22 @@ a:focus-visible,.bouton:focus-visible{outline:3px solid var(--or);outline-offset
 .heros.avec-diapos h1{font-size:clamp(1.7rem,3.2vw,2.6rem);max-width:none}
 .heros.avec-diapos .bouton{min-height:44px;padding:0 20px;font-size:15px}
 @media (max-width:760px){.heros.avec-diapos{min-height:70vh}.heros.avec-diapos .voile{display:none}.encadre{padding:16px 18px}}
+
+/* Bande des partenaires */
+.partenaires-bande{background:#fff;border-top:1px solid var(--trait)}
+.partenaires-bande .bloc{padding:56px 24px}
+.titre-partenaires{font-size:26px;text-align:center;margin-bottom:28px}
+.logos{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:18px}
+.logo-carte{background:#fff;border:1px solid var(--trait);border-radius:10px;height:110px;min-width:150px;padding:12px 18px;display:flex;align-items:center;justify-content:center}
+.logo-carte img{max-height:84px;max-width:220px;width:auto;height:auto;display:block}
+/* Pied de page */
+.pied{background:var(--vert-fonce);color:#C9DCCD;font-size:15px}
+.pied a{color:#fff}
+.pied .pied-haut{padding:48px 24px 36px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px}
+.pied-col{display:flex;flex-direction:column;gap:6px}
+.pied-logo{width:96px;height:auto;background:#fff;border-radius:50%;margin-bottom:6px}
+.pied-nom{font-family:'Archivo',sans-serif;font-weight:800;color:#fff;font-size:18px}
+.pied-slogan{color:var(--or)}
+.pied-titre{font-weight:600;color:#fff;margin-bottom:6px;font-size:16px}
+.pied-bas{border-top:1px solid rgba(255,255,255,.15)}
+.pied-bas .bloc{padding:18px 24px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-size:14px}
