@@ -1,15 +1,18 @@
-logo: ""
-photo_accueil: ""
-date_creation: "15 juin 2023"
-directeur: "KEAN DION ANSELME"
-adresse: "Yamoussoukro, Côte d'Ivoire"
+logo: /images/OSV .png
+photo_accueil: /images/WhatsApp Image 2026-09-04 at 07.46.58.jpeg
+date_creation: 15 juin 2023
+directeur: KEAN DION ANSELME
+adresse: Yamoussoukro, Côte d'Ivoire
 bureaux:
   - Dabakala
   - Kong
   - Touba
-telephone: "[TÉLÉPHONE]"
-email: ""
-agrement: ""
+  - korhogo
+telephone: 0748475128 / 0501295252
+email: securitevie25@gmail.com
 partenaires:
-  - "[Partenaire 1]"
-  - "[Partenaire 2]"
+  - ONG RSB
+  - AGEROUTE
+  - BNETD
+  - BANQUE MONDIALE
+  - PFO
