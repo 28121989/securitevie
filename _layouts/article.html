@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title }} – ONG Sécurité Vie</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap">
+<link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+</head>
+<body>
+{% assign infos = site.data.infos %}
+<header class="entete"><div class="bloc">
+<a class="marque" href="{{ '/' | relative_url }}">{% if infos.logo and infos.logo != "" %}<img src="{{ infos.logo | relative_url }}" alt="Logo ONG Sécurité Vie">{% else %}<span class="sigle">OSV</span>{% endif %}<span>ONG SÉCURITÉ VIE</span></a>
+<nav aria-label="Menu principal"><a href="{{ '/' | relative_url }}#actualites">Actualités</a><a href="{{ '/' | relative_url }}#contact">Contact</a></nav>
+</div></header>
+<main class="article">
+<p class="surtitre">{{ page.date | date: "%d/%m/%Y" }}</p>
+<h1>{{ page.title }}</h1>
+{% if page.image and page.image != "" %}<img class="une" src="{{ page.image | relative_url }}" alt="">{% endif %}
+<div class="corps">{{ content }}</div>
+<p style="margin-top:40px"><a href="{{ '/' | relative_url }}#actualites">← Toutes les actualités</a></p>
+</main>
+<footer class="pied"><div class="bloc"><p>© {{ site.time | date: "%Y" }} ONG Sécurité Vie (OSV) · Yamoussoukro</p><p>Agir pour sauver des vies au quotidien</p></div></footer>
+</body>
+</html>
