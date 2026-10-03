@@ -31,12 +31,12 @@
 {% if diapo.diapos and diapo.diapos.size > 0 %}{% for d in diapo.diapos %}<div class="diapo{% if forloop.first %} active{% endif %}" style="background-image:url('{{ d.image | relative_url }}')" data-legende="{{ d.legende | escape }}"></div>
 {% endfor %}{% elsif infos.photo_accueil and infos.photo_accueil != "" %}<div class="diapo active" style="background-image:url('{{ infos.photo_accueil | relative_url }}')"></div>{% endif %}
 </div>
-<div class="voile"></div>
 <div class="bloc">
-<p class="lieu">Yamoussoukro, Côte d'Ivoire</p>
+<div class="encadre">
+<p class="lieu">ONG Sécurité Vie · Yamoussoukro, Côte d'Ivoire</p>
 <h1>Agir pour sauver des vies au quotidien</h1>
-<p class="intro">L'ONG Sécurité Vie (OSV) intervient auprès des communautés pour la santé, la protection et la sécurité des personnes : santé sexuelle et reproductive, lutte contre les violences basées sur le genre, eau et assainissement, sécurité routière et au travail.</p>
 <div class="boutons"><a class="bouton" href="#domaines">Découvrir nos domaines</a><a class="bouton contour" href="#contact">Devenir partenaire</a></div>
+</div>
 </div>
 <div class="diapo-bas">
 <p class="legende" aria-live="polite"></p>
