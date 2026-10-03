@@ -1,0 +1,92 @@
+media:
+  input: images
+  output: /images
+content:
+  - name: actualites
+    label: Actualités
+    type: collection
+    path: _actualites
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [title, date]
+    fields:
+      - name: title
+        label: Titre
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: image
+        label: Photo
+        type: image
+      - name: resume
+        label: Résumé (2 ou 3 lignes, affiché sur l'accueil)
+        type: text
+      - name: body
+        label: Texte complet
+        type: rich-text
+  - name: activites
+    label: Nos actions
+    type: collection
+    path: _activites
+    view:
+      fields: [title, lieu, periode]
+    fields:
+      - name: title
+        label: Titre de l'activité
+        type: string
+        required: true
+      - name: lieu
+        label: Lieu
+        type: string
+      - name: periode
+        label: Période (ex. 2025-2026)
+        type: string
+      - name: image
+        label: Photo
+        type: image
+      - name: description
+        label: Description
+        type: text
+      - name: ordre
+        label: Ordre d'affichage (1 = en premier)
+        type: number
+  - name: infos
+    label: Coordonnées et paramètres
+    type: file
+    path: _data/infos.yml
+    fields:
+      - name: logo
+        label: Logo
+        type: image
+      - name: photo_accueil
+        label: Grande photo de la page d'accueil (facultatif)
+        type: image
+      - name: date_creation
+        label: Date de création
+        type: string
+      - name: directeur
+        label: Directeur exécutif
+        type: string
+      - name: adresse
+        label: Adresse du siège
+        type: string
+      - name: bureaux
+        label: Bureaux techniques
+        type: string
+        list: true
+      - name: telephone
+        label: Téléphone
+        type: string
+      - name: email
+        label: E-mail
+        type: string
+      - name: agrement
+        label: Numéro d'agrément / récépissé
+        type: string
+      - name: partenaires
+        label: Partenaires
+        type: string
+        list: true
