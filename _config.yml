@@ -1,8 +1,7 @@
 title: "ONG Sécurité Vie"
 description: "Agir pour sauver des vies au quotidien"
 lang: fr
-# Adresse du site : 28121989.github.io/securitevie
-# Si vous achetez un nom de domaine plus tard, remplacez par : baseurl: ""
+# Adresse du site : www.ongsecuritevie.org
 baseurl: ""
 collections:
   actualites:
@@ -10,5 +9,19 @@ collections:
     permalink: /actualites/:name/
   activites:
     output: false
+  domaines:
+    output: true
+    permalink: /domaines/:name/
 exclude:
   - .pages.yml
+defaults:
+  - scope:
+      path: ""
+      type: actualites
+    values:
+      layout: article
+  - scope:
+      path: ""
+      type: domaines
+    values:
+      layout: domaine
