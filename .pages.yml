@@ -90,3 +90,29 @@ content:
         label: Partenaires
         type: string
         list: true
+          - name: apropos
+    label: Vision, mission, valeurs, objectifs
+    type: file
+    path: _data/apropos.yml
+    fields:
+      - name: vision
+        label: Notre vision
+        type: text
+      - name: mission
+        label: Notre mission
+        type: text
+      - name: valeurs
+        label: Nos valeurs
+        type: object
+        list: true
+        fields:
+          - name: titre
+            label: Valeur
+            type: string
+          - name: texte
+            label: Explication
+            type: text
+      - name: objectifs
+        label: Nos objectifs
+        type: text
+        list: true
