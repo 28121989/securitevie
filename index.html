@@ -29,24 +29,19 @@
 {% endfor %}{% elsif infos.photo_accueil and infos.photo_accueil != "" %}<div class="diapo active" style="background-image:url('{{ infos.photo_accueil | relative_url }}')"></div>{% endif %}
 </div>
 <div class="bloc">
-<div class="encadre">
-<p class="lieu">ONG Sécurité Vie · Yamoussoukro, Côte d'Ivoire</p>
-<h1>Agir pour sauver des vies au quotidien</h1>
-<div class="boutons"><a class="bouton" href="#domaines">Découvrir nos domaines</a><a class="bouton contour" href="#contact">Devenir partenaire</a></div>
-</div>
+<h1 class="masque">ONG Sécurité Vie – Agir pour sauver des vies au quotidien</h1>
 </div>
 <div class="diapo-bas">
-<p class="legende" aria-live="polite"></p>
 <div class="points" role="group" aria-label="Choisir une photo"></div>
 </div>
 </section>
 <script>
 (function(){
-  var d=document.querySelectorAll('.diapo'), leg=document.querySelector('.legende'), pts=document.querySelector('.points');
+  var d=document.querySelectorAll('.diapo'),  pts=document.querySelector('.points');
   if(!d.length) return;
   var i=0, delai={{ diapo.vitesse | default: 6 }}*1000, t;
   function voir(n){ d[i].classList.remove('active'); if(pts.children[i]) pts.children[i].setAttribute('aria-current','false');
-    i=(n+d.length)%d.length; d[i].classList.add('active'); leg.textContent=d[i].getAttribute('data-legende')||'';
+    i=(n+d.length)%d.length; d[i].classList.add('active'); 
     if(pts.children[i]) pts.children[i].setAttribute('aria-current','true'); }
   if(d.length>1){ for(var k=0;k<d.length;k++){ var b=document.createElement('button'); b.type='button'; b.setAttribute('aria-label','Photo '+(k+1));
       (function(k){ b.onclick=function(){ voir(k); relancer(); }; })(k); pts.appendChild(b); } }
