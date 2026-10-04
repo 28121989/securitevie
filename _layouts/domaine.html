@@ -16,11 +16,8 @@
 </head>
 <body>
 {% assign infos = site.data.infos %}
-<header class="entete"><div class="bloc">
-<a class="marque" href="{{ '/' | relative_url }}">{% if infos.logo and infos.logo != "" %}<img src="{{ infos.logo | relative_url }}" alt="Logo ONG Sécurité Vie">{% else %}<span class="sigle">OSV</span>{% endif %}<span>ONG SÉCURITÉ VIE</span></a>
-<nav aria-label="Menu principal"><a href="{{ '/' | relative_url }}#domaines">Nos domaines</a><a href="{{ '/' | relative_url }}#actualites">Actualités</a><a href="{{ '/' | relative_url }}#contact">Contact</a></nav>
-</div></header>
-<main class="page-domaine">
+{% include entete.html %}
+<main id="contenu" class="page-domaine">
 <div class="dom-colonne">
 <p class="surtitre"><a href="{{ '/' | relative_url }}#domaines">Nos domaines</a> · {{ page.title }}</p>
 {% if page.affiche and page.affiche != "" %}<figure class="dom-affiche"><img src="{{ page.affiche | relative_url }}" alt="{{ page.title | escape }}"></figure>{% elsif page.image and page.image != "" %}<figure class="dom-affiche"><img src="{{ page.image | relative_url }}" alt="{{ page.title | escape }}"></figure>{% endif %}

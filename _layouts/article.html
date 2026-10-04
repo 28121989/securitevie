@@ -15,11 +15,8 @@
 </head>
 <body>
 {% assign infos = site.data.infos %}
-<header class="entete"><div class="bloc">
-<a class="marque" href="{{ '/' | relative_url }}">{% if infos.logo and infos.logo != "" %}<img src="{{ infos.logo | relative_url }}" alt="Logo ONG Sécurité Vie">{% else %}<span class="sigle">OSV</span>{% endif %}<span>ONG SÉCURITÉ VIE</span></a>
-<nav aria-label="Menu principal"><a href="{{ '/' | relative_url }}#actualites">Actualités</a><a href="{{ '/' | relative_url }}#contact">Contact</a></nav>
-</div></header>
-<main class="article">
+{% include entete.html %}
+<main id="contenu" class="article">
 <p class="surtitre">{{ page.date | date: "%d/%m/%Y" }}</p>
 <h1>{{ page.title }}</h1>
 {% if page.image and page.image != "" %}<img class="une" src="{{ page.image | relative_url }}" alt="">{% endif %}

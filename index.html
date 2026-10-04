@@ -19,18 +19,10 @@
 <body>
 {% assign infos = site.data.infos %}
 
-<header class="entete"><div class="bloc">
-<a class="marque" href="#accueil">{% if infos.logo and infos.logo != "" %}<img src="{{ infos.logo | relative_url }}" alt="Logo ONG Sécurité Vie">{% else %}<span class="sigle">OSV</span>{% endif %}<span>ONG SÉCURITÉ VIE</span></a>
-<nav aria-label="Menu principal">
-<a href="#mission">Qui sommes-nous</a>
-<a href="#domaines">Nos domaines</a>
-<a href="#actions">Nos actions</a>
-<a href="#actualites">Actualités</a>
-<a href="#contact">Contact</a>
-</nav>
-</div></header>
+{% include entete.html %}
 
 {% assign diapo = site.data.diaporama %}
+<span id="contenu"></span>
 <section id="accueil" class="heros avec-diapos" aria-label="Accueil">
 <div class="diapos" aria-hidden="true">
 {% if diapo.diapos and diapo.diapos.size > 0 %}{% for d in diapo.diapos %}<div class="diapo{% if forloop.first %} active{% endif %}" style="background-image:url('{{ d.image | relative_url }}')" data-legende="{{ d.legende | escape }}"></div>

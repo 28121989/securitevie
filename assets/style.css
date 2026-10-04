@@ -163,3 +163,48 @@ a:focus-visible,.bouton:focus-visible{outline:3px solid var(--or);outline-offset
 .dom-texte-carte strong{color:var(--vert)}
 .masque{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 @media (min-width:900px){.dom-carte-complete{grid-column:span 2}}
+
+/* ===== En-tête amélioré ===== */
+.aller-contenu{position:absolute;left:-9999px;top:0;background:var(--accent);color:#1C2422;padding:10px 16px;z-index:100;font-weight:600}
+.aller-contenu:focus{left:12px;top:12px}
+.barre-info{background:var(--vert-fonce);color:#DCE9DF;font-size:14px}
+.barre-info .bloc{padding:8px 24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 24px}
+.barre-slogan{color:var(--or);font-weight:600;letter-spacing:.02em}
+.barre-contacts{display:flex;flex-wrap:wrap;gap:6px 22px;align-items:center}
+.barre-contacts a,.barre-contacts span{display:inline-flex;align-items:center;gap:7px;color:#DCE9DF;text-decoration:none}
+.barre-contacts a:hover{color:#fff;text-decoration:underline}
+.entete{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);backdrop-filter:blur(6px);border-bottom:3px solid var(--accent);transition:box-shadow .25s}
+.entete.defile{box-shadow:0 6px 20px rgba(18,59,32,.12)}
+.entete .bloc{padding:10px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:nowrap}
+.marque{display:flex;align-items:center;gap:14px;text-decoration:none}
+.marque img{height:72px;width:72px;object-fit:contain;border-radius:50%;transition:transform .25s}
+.marque:hover img{transform:scale(1.04)}
+.marque-texte{display:flex;flex-direction:column;line-height:1.15}
+.marque-nom{font-family:'Archivo',sans-serif;font-weight:800;font-size:21px;color:var(--vert);letter-spacing:.02em}
+.marque-sous{font-size:13px;font-weight:600;color:var(--violet);letter-spacing:.08em;text-transform:uppercase;margin-top:4px}
+.menu{display:flex;align-items:center;gap:4px}
+.menu a:not(.bouton){position:relative;padding:10px 14px;font-weight:600;font-size:16px;color:var(--texte);text-decoration:none;border-radius:8px;transition:color .2s,background .2s}
+.menu a:not(.bouton)::after{content:"";position:absolute;left:14px;right:14px;bottom:4px;height:3px;border-radius:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+.menu a:not(.bouton):hover{color:var(--vert);background:#F2F6F1}
+.menu a:not(.bouton):hover::after,.menu a:not(.bouton):focus-visible::after{transform:scaleX(1)}
+.menu-cta{margin-left:12px;min-height:44px;padding:0 20px;font-size:15px;box-shadow:0 3px 0 var(--accent-fonce)}
+.burger{display:none;align-items:center;gap:8px;background:var(--vert);color:#fff;border:0;border-radius:8px;padding:10px 14px;font:600 15px 'Source Sans 3',sans-serif;cursor:pointer}
+.burger-barres,.burger-barres::before,.burger-barres::after{display:block;width:20px;height:2px;background:#fff;border-radius:2px;position:relative;transition:transform .2s}
+.burger-barres::before,.burger-barres::after{content:"";position:absolute;left:0}
+.burger-barres::before{top:-6px}.burger-barres::after{top:6px}
+.burger[aria-expanded="true"] .burger-barres{background:transparent}
+.burger[aria-expanded="true"] .burger-barres::before{transform:translateY(6px) rotate(45deg)}
+.burger[aria-expanded="true"] .burger-barres::after{transform:translateY(-6px) rotate(-45deg)}
+html{scroll-padding-top:110px}
+@media (max-width:1060px){
+  .burger{display:inline-flex}
+  .menu{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:#fff;padding:8px 16px 18px;box-shadow:0 14px 24px rgba(0,0,0,.12);border-bottom:3px solid var(--accent)}
+  .menu.ouvert{display:flex}
+  .menu a:not(.bouton){padding:14px 10px;border-bottom:1px solid var(--trait);border-radius:0}
+  .menu a:not(.bouton)::after{display:none}
+  .menu-cta{margin:14px 0 0;justify-content:center}
+  .marque img{height:56px;width:56px}
+  .marque-nom{font-size:18px}
+}
+@media (max-width:560px){.barre-slogan{display:none}.marque-sous{display:none}.barre-info .bloc{justify-content:center}}
+@media (prefers-reduced-motion:reduce){.menu a::after,.marque img,.entete{transition:none}}
