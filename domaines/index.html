@@ -1,0 +1,30 @@
+---
+layout: page
+title: Nos domaines d'intervention
+bandeau: true
+intro: "Huit domaines, une même mission : protéger la vie et renforcer la sécurité des personnes et des communautés."
+---
+<section class="section-page"><div class="bloc">
+<div class="grille grille-domaines">
+{% assign doms = site.domaines | sort: "ordre" %}
+{% for d in doms %}
+{% if d.affiche and d.affiche != "" %}
+<article class="dom-carte dom-carte-complete">
+<img class="dom-flyer" src="{{ d.affiche | relative_url }}" alt="{{ d.title | escape }}" loading="lazy">
+<div class="dom-carte-contenu">
+<h3 class="masque">{{ d.title }}</h3>
+{% if d.titre_long and d.titre_long != "" %}<p class="dom-titre-long">{{ d.titre_long }}</p>{% endif %}
+<div class="dom-texte-carte">{{ d.content }}</div>
+</div>
+</article>
+{% else %}
+<article class="dom-carte">
+{% if d.image and d.image != "" %}<img src="{{ d.image | relative_url }}" alt="" loading="lazy">{% else %}<div class="dom-bandeau"></div>{% endif %}
+<div class="dom-carte-contenu">
+<h3>{{ d.title }}</h3>
+<p>{{ d.resume }}</p>
+</div>
+</article>
+{% endif %}
+{% endfor %}
+</div></section>

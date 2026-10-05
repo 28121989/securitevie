@@ -17,19 +17,29 @@
 </a>
 <button class="burger" type="button" aria-expanded="false" aria-controls="menu-principal"><span class="burger-barres" aria-hidden="true"></span><span class="burger-texte">Menu</span></button>
 <nav id="menu-principal" class="menu" aria-label="Menu principal">
-<a href="{{ accueil }}#mission">Qui sommes-nous</a>
-<a href="{{ accueil }}#domaines">Nos domaines</a>
-<a href="{{ accueil }}#actions">Nos actions</a>
-<a href="{{ accueil }}#actualites">Actualités</a>
-<a href="{{ accueil }}#contact">Contact</a>
-<a class="bouton menu-cta" href="{{ accueil }}#contact">Devenir partenaire</a>
+<a href="{{ accueil }}"{% if page.url == "/" %} aria-current="page"{% endif %}>Accueil</a>
+<div class="sous-menu-bloc">
+<button type="button" class="sous-menu-bouton" aria-expanded="false" aria-controls="sous-menu-qsn">Qui sommes-nous <span class="fleche" aria-hidden="true"></span></button>
+<div id="sous-menu-qsn" class="sous-menu">
+<a href="{{ '/domaines/' | relative_url }}"><strong>Nos domaines</strong><span>Nos 8 domaines d'intervention</span></a>
+<a href="{{ '/realisations/' | relative_url }}"><strong>Nos réalisations</strong><span>Nos projets sur le terrain</span></a>
+<a href="{{ '/actualites/' | relative_url }}"><strong>Notre actualité</strong><span>Événements et nouvelles</span></a>
+</div>
+</div>
+<a href="{{ '/contact/' | relative_url }}"{% if page.url == "/contact/" %} aria-current="page"{% endif %}>Contact</a>
+<a class="bouton menu-cta" href="{{ '/contact/' | relative_url }}">Devenir partenaire</a>
 </nav>
 </div></header>
 <script>
 (function(){
   var e=document.getElementById('entete'), b=e.querySelector('.burger'), m=document.getElementById('menu-principal');
   b.addEventListener('click',function(){ var o=b.getAttribute('aria-expanded')==='true'; b.setAttribute('aria-expanded',String(!o)); m.classList.toggle('ouvert',!o); });
-  m.addEventListener('click',function(ev){ if(ev.target.tagName==='A'){ b.setAttribute('aria-expanded','false'); m.classList.remove('ouvert'); } });
+  var sb=e.querySelector('.sous-menu-bouton'), bloc=e.querySelector('.sous-menu-bloc');
+  function sous(o){ sb.setAttribute('aria-expanded',String(o)); bloc.classList.toggle('ouvert',o); }
+  sb.addEventListener('click',function(ev){ ev.stopPropagation(); sous(sb.getAttribute('aria-expanded')!=='true'); });
+  document.addEventListener('click',function(ev){ if(!bloc.contains(ev.target)) sous(false); });
+  document.addEventListener('keydown',function(ev){ if(ev.key==='Escape'){ sous(false); sb.focus(); } });
+  m.addEventListener('click',function(ev){ if(ev.target.closest('a')){ b.setAttribute('aria-expanded','false'); m.classList.remove('ouvert'); sous(false); } });
   function ombre(){ e.classList.toggle('defile', window.scrollY>10); }
   window.addEventListener('scroll',ombre,{passive:true}); ombre();
 })();

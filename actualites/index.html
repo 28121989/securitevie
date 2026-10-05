@@ -1,0 +1,17 @@
+---
+layout: page
+title: Notre actualité
+bandeau: true
+intro: "Suivez nos activités, nos événements et nos dernières nouvelles."
+---
+<section class="section-page"><div class="bloc">
+<div class="grille">
+{% assign actus = site.actualites | sort: "date" | reverse %}
+{% for n in actus %}
+<article class="carte">
+{% if n.image and n.image != "" %}<img src="{{ n.image | relative_url }}" alt="">{% endif %}
+<div class="contenu"><p class="meta">{{ n.date | date: "%d/%m/%Y" }}</p><h3><a href="{{ n.url | relative_url }}" style="text-decoration:none">{{ n.title }}</a></h3><p>{{ n.resume }}</p><p><a href="{{ n.url | relative_url }}">Lire la suite</a></p></div>
+</article>
+{% endfor %}
+</div>
+</div></section>

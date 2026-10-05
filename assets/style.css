@@ -243,3 +243,52 @@ html{scroll-padding-top:110px}
 .whatsapp-flottant{position:fixed;right:20px;bottom:20px;z-index:60;width:58px;height:58px;border-radius:50%;background:#1FA855;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.25);transition:transform .2s}
 .whatsapp-flottant:hover{transform:scale(1.08);color:#fff}
 @media (max-width:560px){.whatsapp-flottant{width:52px;height:52px;right:14px;bottom:14px}}
+
+/* ===== Sous-menu « Qui sommes-nous » ===== */
+.sous-menu-bloc{position:relative}
+.sous-menu-bouton{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;font:600 16px 'Source Sans 3',sans-serif;color:var(--texte);background:none;border:0;border-radius:8px;cursor:pointer}
+.sous-menu-bouton:hover,.sous-menu-bloc.ouvert .sous-menu-bouton{color:var(--vert);background:#F2F6F1}
+.fleche{width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .2s}
+.sous-menu-bloc.ouvert .fleche{transform:rotate(-135deg) translateY(-2px)}
+.sous-menu{display:none;position:absolute;top:calc(100% + 8px);left:0;min-width:290px;background:#fff;border-radius:12px;box-shadow:0 16px 36px rgba(18,59,32,.18);border-top:4px solid var(--accent);padding:8px;z-index:70}
+.sous-menu-bloc.ouvert .sous-menu{display:block}
+@media (hover:hover) and (min-width:1061px){.sous-menu-bloc:hover .sous-menu{display:block}.sous-menu-bloc:hover .fleche{transform:rotate(-135deg) translateY(-2px)}.sous-menu-bloc::after{content:"";position:absolute;left:0;right:0;top:100%;height:10px}}
+.sous-menu a{display:flex;flex-direction:column;gap:2px;padding:12px 14px;border-radius:8px;text-decoration:none;color:var(--texte)}
+.sous-menu a::after{display:none}
+.sous-menu a strong{color:var(--vert);font-size:16px}
+.sous-menu a span{font-size:14px;color:#5B6763}
+.sous-menu a:hover,.sous-menu a:focus-visible{background:#F2F6F1}
+.menu a[aria-current="page"]:not(.bouton){color:var(--vert)}
+.menu a[aria-current="page"]:not(.bouton)::after{transform:scaleX(1)}
+@media (max-width:1060px){
+  .sous-menu-bouton{width:100%;justify-content:space-between;padding:14px 10px;border-bottom:1px solid var(--trait);border-radius:0}
+  .sous-menu{position:static;box-shadow:none;border-top:0;padding:0 0 6px 12px;min-width:0}
+}
+/* ===== Pages internes ===== */
+.bandeau-page{background:linear-gradient(120deg,var(--vert-fonce),var(--vert));color:#fff}
+.bandeau-page .bloc{padding:56px 24px 52px}
+.bandeau-page h1{font-weight:800;font-size:clamp(2rem,4vw,3rem);color:#fff;margin-top:10px}
+.bandeau-intro{font-size:19px;color:var(--clair);max-width:46rem;margin-top:14px}
+.fil{font-size:14px;color:inherit;opacity:.9}
+.fil a{color:inherit}
+.bandeau-page .fil{color:var(--or)}
+.section-page .bloc{padding:56px 24px 72px}
+.section-page .grille{margin-top:0}
+.titre-section{font-size:30px;margin-bottom:28px}
+.galerie{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.galerie figure{margin:0;border-radius:12px;overflow:hidden;background:#fff;border:1px solid var(--trait)}
+.galerie img{width:100%;height:220px;object-fit:cover}
+.galerie figcaption{padding:10px 14px;font-size:15px}
+.article .fil,.dom-colonne .fil{color:#5B6763}
+
+.menu .sous-menu a{display:flex;padding:12px 14px;border-bottom:0;border-radius:8px}
+.menu .sous-menu a::after{display:none}
+.titre-contact{font-weight:800;font-size:clamp(2rem,4vw,3rem);color:#fff}
+@media (max-width:1060px){.menu .sous-menu a{padding:10px 10px}}
+
+/* En-tête : empêcher le menu de passer à la ligne */
+.menu{flex-wrap:nowrap}
+.menu a,.sous-menu-bouton{white-space:nowrap}
+.marque{flex-shrink:1;min-width:0}
+.marque-sous{max-width:330px;line-height:1.35}
+.menu{flex-shrink:0}

@@ -1,31 +1,10 @@
-<!doctype html>
-<html lang="fr">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{ page.title }} – ONG Sécurité Vie</title>
-<meta name="description" content="{{ page.resume | escape }}">
-<link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="{{ '/favicon-32.png' | relative_url }}">
-<link rel="icon" type="image/png" sizes="192x192" href="{{ '/icone-192.png' | relative_url }}">
-<link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">
-<meta name="theme-color" content="#1E5B32">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap">
-<link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
-</head>
-<body>
-{% assign infos = site.data.infos %}
-{% include entete.html %}
-<main id="contenu" class="page-domaine">
+---
+layout: page
+---
 <div class="dom-colonne">
-<p class="surtitre"><a href="{{ '/' | relative_url }}#domaines">Nos domaines</a> · {{ page.title }}</p>
+<p class="fil"><a href="{{ '/' | relative_url }}">Accueil</a> <span aria-hidden="true">›</span> <a href="{{ '/domaines/' | relative_url }}">Nos domaines</a> <span aria-hidden="true">›</span> {{ page.title }}</p>
 {% if page.affiche and page.affiche != "" %}<figure class="dom-affiche"><img src="{{ page.affiche | relative_url }}" alt="{{ page.title | escape }}"></figure>{% elsif page.image and page.image != "" %}<figure class="dom-affiche"><img src="{{ page.image | relative_url }}" alt="{{ page.title | escape }}"></figure>{% endif %}
 <h1>{% if page.titre_long and page.titre_long != "" %}{{ page.titre_long }}{% else %}{{ page.title }}{% endif %}</h1>
 <div class="dom-texte">{{ content }}</div>
-<div class="dom-appel"><a class="bouton" href="{{ '/' | relative_url }}#contact">Devenir partenaire</a><a class="lien-retour" href="{{ '/' | relative_url }}#domaines">← Tous nos domaines</a></div>
+<div class="dom-appel"><a class="bouton" href="{{ '/contact/' | relative_url }}">Devenir partenaire</a><a class="lien-retour" href="{{ '/domaines/' | relative_url }}">← Tous nos domaines</a></div>
 </div>
-</main>
-<footer class="pied"><div class="bloc"><p>© {{ site.time | date: "%Y" }} ONG Sécurité Vie (OSV) · Yamoussoukro</p><p>Agir pour sauver des vies au quotidien</p></div></footer>
-</body>
-</html>

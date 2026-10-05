@@ -1,0 +1,28 @@
+---
+layout: page
+title: Nos réalisations
+bandeau: true
+intro: "Des actions concrètes menées avec les communautés et nos partenaires, partout en Côte d'Ivoire."
+---
+{% assign diapo = site.data.diaporama %}
+<section class="section-page"><div class="bloc">
+<h2 class="titre-section">Nos projets sur le terrain</h2>
+<div class="grille">
+{% assign activites = site.activites | sort: "ordre" %}
+{% for a in activites %}
+<article class="carte">
+{% if a.image and a.image != "" %}<img src="{{ a.image | relative_url }}" alt="">{% endif %}
+<div class="contenu"><p class="meta">{{ a.lieu }}{% if a.periode and a.periode != "" %} · {{ a.periode }}{% endif %}</p><h3>{{ a.title }}</h3><p>{{ a.description }}</p></div>
+</article>
+{% endfor %}
+</div>
+</div></section>
+{% if diapo.diapos and diapo.diapos.size > 0 %}
+<section class="section-page blanc"><div class="bloc">
+<h2 class="titre-section">En images</h2>
+<div class="galerie">
+{% for d in diapo.diapos %}<figure><img src="{{ d.image | relative_url }}" alt="{{ d.legende | escape }}" loading="lazy">{% if d.legende and d.legende != "" %}<figcaption>{{ d.legende }}</figcaption>{% endif %}</figure>
+{% endfor %}
+</div>
+</div></section>
+{% endif %}

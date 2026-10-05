@@ -1,28 +1,10 @@
 ---
+layout: page
+title: Accueil
 ---
-<!doctype html>
-<html lang="fr">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ONG Sécurité Vie – Agir pour sauver des vies au quotidien</title>
-<meta name="description" content="ONG ivoirienne basée à Yamoussoukro : santé sexuelle et reproductive, lutte contre les VBG, eau et assainissement, sécurité routière et au travail.">
-<link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="{{ '/favicon-32.png' | relative_url }}">
-<link rel="icon" type="image/png" sizes="192x192" href="{{ '/icone-192.png' | relative_url }}">
-<link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">
-<meta name="theme-color" content="#1E5B32">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap">
-<link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
-</head>
-<body>
 {% assign infos = site.data.infos %}
 
-{% include entete.html %}
-
 {% assign diapo = site.data.diaporama %}
-<span id="contenu"></span>
 <section id="accueil" class="heros avec-diapos" aria-label="Accueil">
 <div class="diapos" aria-hidden="true">
 {% if diapo.diapos and diapo.diapos.size > 0 %}{% for d in diapo.diapos %}<div class="diapo{% if forloop.first %} active{% endif %}" style="background-image:url('{{ d.image | relative_url }}')" data-legende="{{ d.legende | escape }}"></div>
@@ -54,7 +36,7 @@
 <div class="deux-col">
 <div><p class="surtitre">Qui sommes-nous</p><h2>Une ONG ivoirienne au service des communautés</h2></div>
 <div class="pile">
-<p>Créée le {{ infos.date_creation }}, l'ONG Sécurité Vie (OSV) a son siège à Yamoussoukro et dispose de bureaux techniques à {{ infos.bureaux | join: ", " }} et dans d'autres localités du pays, au plus près des communautés.</p>
+<p>L'ONG Sécurité Vie (OSV) a son siège à Yamoussoukro et dispose de bureaux techniques à {{ infos.bureaux | join: ", " }} et dans d'autres localités du pays, au plus près des communautés.</p>
 {% if infos.agrement and infos.agrement != "" %}<p><strong>{{ infos.agrement }}</strong></p>{% endif %}
 </div>
 </div>
@@ -80,135 +62,3 @@
 </div>
 </div>
 </div></section>
-
-<section id="domaines" class="blanc"><div class="bloc">
-<p class="surtitre">Nos domaines d'intervention</p>
-<h2>{{ site.domaines.size }} domaines, une même mission : protéger la vie</h2>
-<div class="grille grille-domaines">
-{% assign doms = site.domaines | sort: "ordre" %}
-{% for d in doms %}
-{% if d.affiche and d.affiche != "" %}
-<article class="dom-carte dom-carte-complete">
-<img class="dom-flyer" src="{{ d.affiche | relative_url }}" alt="{{ d.title | escape }}" loading="lazy">
-<div class="dom-carte-contenu">
-<h3 class="masque">{{ d.title }}</h3>
-{% if d.titre_long and d.titre_long != "" %}<p class="dom-titre-long">{{ d.titre_long }}</p>{% endif %}
-<div class="dom-texte-carte">{{ d.content }}</div>
-</div>
-</article>
-{% else %}
-<article class="dom-carte">
-{% if d.image and d.image != "" %}<img src="{{ d.image | relative_url }}" alt="" loading="lazy">{% else %}<div class="dom-bandeau"></div>{% endif %}
-<div class="dom-carte-contenu">
-<h3>{{ d.title }}</h3>
-<p>{{ d.resume }}</p>
-</div>
-</article>
-{% endif %}
-{% endfor %}
-</div></section>
-
-<section id="actions"><div class="bloc">
-<p class="surtitre">Nos actions</p>
-<h2>Sur le terrain</h2>
-<div class="grille">
-{% assign activites = site.activites | sort: "ordre" %}
-{% for a in activites %}
-<article class="carte">
-{% if a.image and a.image != "" %}<img src="{{ a.image | relative_url }}" alt="">{% endif %}
-<div class="contenu"><p class="meta">{{ a.lieu }}{% if a.periode and a.periode != "" %} · {{ a.periode }}{% endif %}</p><h3>{{ a.title }}</h3><p>{{ a.description }}</p></div>
-</article>
-{% endfor %}
-</div>
-</div></section>
-
-<section id="actualites" class="blanc"><div class="bloc">
-<p class="surtitre">Actualités</p>
-<h2>Les dernières nouvelles</h2>
-<div class="grille">
-{% assign actus = site.actualites | sort: "date" | reverse %}
-{% for n in actus limit: 9 %}
-<article class="carte">
-{% if n.image and n.image != "" %}<img src="{{ n.image | relative_url }}" alt="">{% endif %}
-<div class="contenu"><p class="meta">{{ n.date | date: "%d/%m/%Y" }}</p><h3><a href="{{ n.url | relative_url }}" style="text-decoration:none">{{ n.title }}</a></h3><p>{{ n.resume }}</p><p><a href="{{ n.url | relative_url }}">Lire la suite</a></p></div>
-</article>
-{% endfor %}
-</div>
-</div></section>
-
-<section id="contact" class="contact"><div class="bloc deux-col">
-<div class="pile">
-<p class="surtitre">Contact</p>
-<h2>Travaillons ensemble</h2>
-<p class="clair">Bailleurs, entreprises, collectivités : contactez-nous pour construire un projet commun.</p>
-</div>
-{% assign rs = site.data.reseaux %}
-<div class="encart">
-<h3>{{ infos.directeur }}, Directeur exécutif</h3>
-<p>Siège : {{ infos.adresse }}</p>
-<p>Bureaux techniques : {{ infos.bureaux | join: ", " }}</p>
-<p>Tél. : {{ infos.telephone }}</p>
-{% if infos.email and infos.email != "" %}<p>E-mail : <a href="mailto:{{ infos.email }}">{{ infos.email }}</a></p>{% endif %}
-<div class="contact-boutons">
-{% if rs.whatsapp %}<a class="bouton bouton-whatsapp" href="https://wa.me/{{ rs.whatsapp }}?text={{ 'Bonjour ONG Sécurité Vie, je vous contacte depuis votre site internet.' | uri_escape }}" target="_blank" rel="noopener">Écrire sur WhatsApp</a>{% endif %}
-<a class="bouton bouton-contour-vert" href="#formulaire">Envoyer un message</a>
-</div>
-<div class="contact-reseaux"><span>Suivez-nous :</span>{% include reseaux.html classe="reseaux-sombres" %}</div>
-<form id="formulaire" class="formulaire" action="https://formsubmit.co/{{ rs.email_formulaire }}" method="POST">
-<p class="form-titre">Envoyez-nous un message</p>
-<input type="hidden" name="_subject" value="Nouveau message depuis le site ongsecuritevie.org">
-<input type="hidden" name="_next" value="{{ site.url | default: 'https://ongsecuritevie.org' }}{{ '/merci/' | relative_url }}">
-<input type="hidden" name="_template" value="table">
-<input type="text" name="_honey" class="masque" tabindex="-1" autocomplete="off" aria-hidden="true">
-<label for="f-nom">Nom et organisation</label>
-<input id="f-nom" name="Nom" type="text" required autocomplete="name">
-<label for="f-email">Votre e-mail</label>
-<input id="f-email" name="email" type="email" required autocomplete="email">
-<label for="f-tel">Téléphone (facultatif)</label>
-<input id="f-tel" name="Téléphone" type="tel" autocomplete="tel">
-<label for="f-message">Votre message</label>
-<textarea id="f-message" name="Message" rows="5" required></textarea>
-<button type="submit" class="bouton">Envoyer le message</button>
-</form>
-</div>
-</div></section>
-
-{% assign pa = site.data.partenaires %}
-{% if pa.logos and pa.logos.size > 0 %}
-<section class="partenaires-bande" aria-labelledby="titre-partenaires"><div class="bloc">
-<h2 id="titre-partenaires" class="titre-partenaires">{{ pa.titre | default: "Ils nous font confiance" }}</h2>
-<ul class="logos">
-{% for p in pa.logos %}<li class="logo-carte"><img src="{{ p.logo | relative_url }}" alt="{{ p.nom | escape }}" title="{{ p.nom | escape }}" loading="lazy"></li>
-{% endfor %}</ul>
-</div></section>
-{% endif %}
-
-<footer class="pied">
-<div class="bloc pied-haut">
-<div class="pied-col pied-marque">
-{% if infos.logo and infos.logo != "" %}<img src="{{ infos.logo | relative_url }}" alt="Logo ONG Sécurité Vie" class="pied-logo">{% endif %}
-<p class="pied-nom">ONG SÉCURITÉ VIE</p>
-<p class="pied-slogan">Agir pour sauver des vies au quotidien</p>
-{% include reseaux.html classe="reseaux-pied" %}
-</div>
-<div class="pied-col">
-<p class="pied-titre">Nous contacter</p>
-<p>Siège : {{ infos.adresse }}</p>
-<p>Bureaux techniques : {{ infos.bureaux | join: ", " }}</p>
-{% if infos.telephone and infos.telephone != "" %}<p>Tél. : {{ infos.telephone }}</p>{% endif %}
-{% if infos.email and infos.email != "" %}<p><a href="mailto:{{ infos.email }}">{{ infos.email }}</a></p>{% endif %}
-<p><a href="https://wa.me/{{ site.data.reseaux.whatsapp }}" target="_blank" rel="noopener">WhatsApp : {{ site.data.reseaux.whatsapp_affiche }}</a></p>
-</div>
-<div class="pied-col">
-<p class="pied-titre">Navigation</p>
-<p><a href="#mission">Qui sommes-nous</a></p>
-<p><a href="#domaines">Nos domaines</a></p>
-<p><a href="#actions">Nos actions</a></p>
-<p><a href="#actualites">Actualités</a></p>
-<p><a href="#contact">Contact</a></p>
-</div>
-</div>
-<div class="pied-bas"><div class="bloc"><p>© {{ site.time | date: "%Y" }} ONG Sécurité Vie (OSV) · Yamoussoukro, Côte d'Ivoire</p>{% if infos.agrement and infos.agrement != "" %}<p>{{ infos.agrement }}</p>{% endif %}</div></div>
-</footer>
-</body>
-</html>

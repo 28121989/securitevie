@@ -1,0 +1,42 @@
+---
+layout: page
+title: Contact
+intro: "Bailleurs, entreprises, collectivités : contactez-nous pour construire un projet commun."
+---
+{% assign infos = site.data.infos %}
+<section id="contact" class="contact"><div class="bloc deux-col">
+<div class="pile">
+<p class="surtitre">Contact</p>
+<h1 class="titre-contact">Travaillons ensemble</h1>
+<p class="clair">Bailleurs, entreprises, collectivités : contactez-nous pour construire un projet commun.</p>
+</div>
+{% assign rs = site.data.reseaux %}
+<div class="encart">
+<h3>{{ infos.directeur }}, Directeur exécutif</h3>
+<p>Siège : {{ infos.adresse }}</p>
+<p>Bureaux techniques : {{ infos.bureaux | join: ", " }}</p>
+<p>Tél. : {{ infos.telephone }}</p>
+{% if infos.email and infos.email != "" %}<p>E-mail : <a href="mailto:{{ infos.email }}">{{ infos.email }}</a></p>{% endif %}
+<div class="contact-boutons">
+{% if rs.whatsapp %}<a class="bouton bouton-whatsapp" href="https://wa.me/{{ rs.whatsapp }}?text={{ 'Bonjour ONG Sécurité Vie, je vous contacte depuis votre site internet.' | uri_escape }}" target="_blank" rel="noopener">Écrire sur WhatsApp</a>{% endif %}
+<a class="bouton bouton-contour-vert" href="#formulaire">Envoyer un message</a>
+</div>
+<div class="contact-reseaux"><span>Suivez-nous :</span>{% include reseaux.html classe="reseaux-sombres" %}</div>
+<form id="formulaire" class="formulaire" action="https://formsubmit.co/{{ rs.email_formulaire }}" method="POST">
+<p class="form-titre">Envoyez-nous un message</p>
+<input type="hidden" name="_subject" value="Nouveau message depuis le site ongsecuritevie.org">
+<input type="hidden" name="_next" value="{{ site.url | default: 'https://ongsecuritevie.org' }}{{ '/merci/' | relative_url }}">
+<input type="hidden" name="_template" value="table">
+<input type="text" name="_honey" class="masque" tabindex="-1" autocomplete="off" aria-hidden="true">
+<label for="f-nom">Nom et organisation</label>
+<input id="f-nom" name="Nom" type="text" required autocomplete="name">
+<label for="f-email">Votre e-mail</label>
+<input id="f-email" name="email" type="email" required autocomplete="email">
+<label for="f-tel">Téléphone (facultatif)</label>
+<input id="f-tel" name="Téléphone" type="tel" autocomplete="tel">
+<label for="f-message">Votre message</label>
+<textarea id="f-message" name="Message" rows="5" required></textarea>
+<button type="submit" class="bouton">Envoyer le message</button>
+</form>
+</div>
+</div></section>

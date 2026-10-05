@@ -1,0 +1,12 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.title and page.url != "/" %}{{ page.title }} – {% endif %}ONG Sécurité Vie – Agir pour sauver des vies au quotidien</title>
+<meta name="description" content="{% if page.resume %}{{ page.resume | strip_html | escape }}{% elsif page.intro %}{{ page.intro | escape }}{% else %}ONG ivoirienne basée à Yamoussoukro : santé sexuelle et reproductive, lutte contre les VBG, eau et assainissement, environnement, sécurité routière et au travail.{% endif %}">
+<link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ '/favicon-32.png' | relative_url }}">
+<link rel="icon" type="image/png" sizes="192x192" href="{{ '/icone-192.png' | relative_url }}">
+<link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">
+<meta name="theme-color" content="#1E5B32">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap">
+<link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
