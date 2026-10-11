@@ -17,4 +17,5 @@ piliers:
   - titre: "Gouvernance locale"
     texte: "Des comités de gestion formés pour entretenir durablement les installations."
 engagement: "Moins de maladies, plus de filles à l'école, des communautés plus fortes."
+seo_titre: "ONG eau, hygiène et assainissement (WASH) en Côte d'Ivoire"
 ---

@@ -17,4 +17,5 @@ piliers:
   - titre: "Femmes rurales"
     texte: "Renforcer les revenus et la place des groupements de femmes."
 engagement: "Des champs plus sains, des familles mieux nourries."
+seo_titre: "ONG agriculture durable en Côte d'Ivoire"
 ---

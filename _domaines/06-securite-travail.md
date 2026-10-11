@@ -15,4 +15,5 @@ piliers:
   - titre: "Santé au travail"
     texte: "Sensibilisation IST/VIH, hygiène et bien-être sur les chantiers."
 engagement: "Un travailleur protégé, c'est une famille qui garde son soutien."
+seo_titre: "ONG santé et sécurité au travail en Côte d'Ivoire"
 ---

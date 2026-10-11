@@ -17,4 +17,5 @@ piliers:
   - titre: "Autonomisation des femmes"
     texte: "Donner aux femmes les moyens de décider de leur corps et de leur avenir."
 engagement: "Faire du droit à la santé une réalité pour toutes."
+seo_titre: "ONG santé sexuelle et reproductive et lutte contre les VBG en Côte d'Ivoire"
 ---

@@ -17,4 +17,5 @@ piliers:
   - titre: "Rendre compte"
     texte: "Informer les communautés et les partenaires des solutions apportées."
 engagement: "Un projet qui écoute est un projet qui dure."
+seo_titre: "ONG mécanisme de gestion des plaintes (MGP) en Côte d'Ivoire"
 ---

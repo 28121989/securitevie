@@ -1,8 +1,13 @@
 title: "ONG Sécurité Vie"
-description: "Agir pour sauver des vies au quotidien"
+description: "L'ONG Sécurité Vie (OSV), basée à Yamoussoukro, agit en Côte d'Ivoire pour la santé sexuelle et reproductive, la lutte contre les VBG, l'eau et l'assainissement, l'environnement et la sécurité routière et au travail."
 lang: fr
-# Adresse du site : www.ongsecuritevie.org
+# Adresse du site
+url: "https://ongsecuritevie.org"
 baseurl: ""
+# Code de vérification Google Search Console (à coller entre les guillemets)
+google_verification: ""
+plugins:
+  - jekyll-sitemap
 collections:
   actualites:
     output: true

@@ -17,4 +17,5 @@ piliers:
   - titre: "Prévention HSE"
     texte: "Réduire les risques liés aux déchets, aux pollutions et aux chantiers."
 engagement: "Chaque arbre planté est un investissement pour les générations futures."
+seo_titre: "ONG environnement, reboisement et résilience climatique en Côte d'Ivoire"
 ---

@@ -17,4 +17,5 @@ piliers:
   - titre: "Bons réflexes"
     texte: "Casque, vitesse adaptée, zéro alcool au volant, traversées sécurisées."
 engagement: "Des routes plus sûres, ce sont des familles préservées."
+seo_titre: "ONG sécurité routière en Côte d'Ivoire"
 ---

@@ -5,7 +5,7 @@ layout: page
 <div class="dp-haut">
 <p class="fil"><a href="{{ '/' | relative_url }}">Accueil</a> <span aria-hidden="true">›</span> <a href="{{ '/domaines/' | relative_url }}">Nos domaines</a> <span aria-hidden="true">›</span> {{ page.title }}</p>
 {% if page.affiche and page.affiche != "" %}<figure class="dp-affiche dp-{{ page.format | default: 'paysage' }}"><img src="{{ page.affiche | relative_url }}" alt="{{ page.title | escape }}"></figure>{% endif %}
-<p class="dp-domaine">{{ page.title }}</p>
+<p class="dp-domaine">{{ page.title }} · ONG Sécurité Vie, Côte d'Ivoire</p>
 <h1 class="dp-titre">{{ page.accroche | default: page.titre_long | default: page.title }}</h1>
 {% if page.intro %}<p class="dp-intro">{{ page.intro }}</p>{% else %}<p class="dp-intro">{{ page.resume }}</p>{% endif %}
 </div>
