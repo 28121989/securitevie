@@ -5,6 +5,7 @@ ordre: 1
 resume: "Aucune communauté ne peut prospérer lorsque la santé et l'intégrité des femmes et des jeunes filles sont menacées. Nous agissons pour la santé sexuelle et reproductive, contre les violences basées sur le genre et pour l'autonomisation des femmes."
 image: "/images/domaines/dssr-vbg-carte.jpg"
 affiche: "/images/domaines/dssr-vbg-affiche.jpg"
+format: "paysage"
 ---
 À l'ONG Sécurité Vie, nous sommes convaincus qu'aucune communauté ne peut prospérer lorsque la santé et l'intégrité des femmes et des jeunes filles sont menacées. En Côte d'Ivoire et dans la région, l'accès limité aux soins de santé sexuelle et la persistance des violences basées sur le genre (VBG) constituent des freins majeurs au développement.
 

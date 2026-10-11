@@ -5,26 +5,28 @@ bandeau: true
 intro: "Sept domaines, une même mission : protéger la vie et renforcer la sécurité des personnes et des communautés."
 ---
 <section class="section-page"><div class="bloc">
-<div class="grille grille-domaines">
+<div class="grille-domaines-v2">
 {% assign doms = site.domaines | sort: "ordre" %}
-{% for d in doms %}
+{% for d in doms %}{% assign txt = d.content | strip_html | strip %}
 {% if d.affiche and d.affiche != "" %}
-<article class="dom-carte dom-carte-complete">
-<img class="dom-flyer" src="{{ d.affiche | relative_url }}" alt="{{ d.title | escape }}" loading="lazy">
+<article class="dom-carte dom-carte-complete dom-{{ d.format | default: 'paysage' }}">
+<a class="dom-flyer-lien" href="{{ d.url | relative_url }}"><img class="dom-flyer" src="{{ d.affiche | relative_url }}" alt="{{ d.title | escape }}" loading="lazy"></a>
 <div class="dom-carte-contenu">
 <h3 class="masque">{{ d.title }}</h3>
 {% if d.titre_long and d.titre_long != "" %}<p class="dom-titre-long">{{ d.titre_long }}</p>{% endif %}
-<div class="dom-texte-carte">{{ d.content }}</div>
+{% if txt != "" %}<div class="dom-texte-carte">{{ d.content }}</div>{% else %}<p class="dom-resume">{{ d.resume }}</p>{% endif %}
 </div>
 </article>
 {% else %}
-<article class="dom-carte">
-{% if d.image and d.image != "" %}<img src="{{ d.image | relative_url }}" alt="" loading="lazy">{% else %}<div class="dom-bandeau"></div>{% endif %}
+<article class="dom-carte dom-sans-image">
+<div class="dom-bandeau"></div>
 <div class="dom-carte-contenu">
 <h3>{{ d.title }}</h3>
-<p>{{ d.resume }}</p>
+{% if d.titre_long and d.titre_long != "" %}<p class="dom-titre-long">{{ d.titre_long }}</p>{% endif %}
+{% if txt != "" %}<div class="dom-texte-carte">{{ d.content }}</div>{% else %}<p>{{ d.resume }}</p>{% endif %}
 </div>
 </article>
 {% endif %}
 {% endfor %}
+</div>
 </div></section>

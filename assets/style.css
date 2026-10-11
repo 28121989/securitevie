@@ -296,3 +296,26 @@ html{scroll-padding-top:110px}
 /* Police Arial sur tout le site */
 body,button,input,textarea,select,h1,h2,h3,h4{font-family:Arial, Helvetica, sans-serif}
 h1,h2,.marque-nom,.vm-titre,.form-titre,.dom-titre-long,.titre-contact{font-weight:700;letter-spacing:0}
+
+/* ===== Domaines : mosaïque d'affiches (paysage / portrait) ===== */
+.grille-domaines-v2{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:24px;align-items:stretch}
+.grille-domaines-v2 .dom-carte{grid-column:span 2;margin:0}
+.grille-domaines-v2 .dom-paysage{grid-column:span 3}
+.grille-domaines-v2 .dom-carte-complete{background:#fff;border:1px solid var(--trait);box-shadow:0 6px 20px rgba(18,59,32,.07);transition:transform .25s,box-shadow .25s}
+.grille-domaines-v2 .dom-carte-complete:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(18,59,32,.14)}
+.dom-flyer-lien{display:block;background:#EEF2EC}
+.grille-domaines-v2 .dom-flyer{width:100%;height:auto;display:block}
+.dom-resume{font-size:16px;color:var(--texte);border-left:4px solid var(--accent);padding-left:12px;border-radius:0}
+.grille-domaines-v2 .dom-sans-image{background:var(--vert);color:#fff;justify-content:flex-start}
+.grille-domaines-v2 .dom-sans-image h3{color:#fff;font-size:24px}
+.grille-domaines-v2 .dom-sans-image p{color:var(--clair)}
+.grille-domaines-v2 .dom-sans-image .dom-bandeau{background:var(--accent)}
+@media (max-width:1000px){.grille-domaines-v2{grid-template-columns:repeat(2,minmax(0,1fr))}.grille-domaines-v2 .dom-carte{grid-column:span 1}.grille-domaines-v2 .dom-paysage{grid-column:span 2}}
+@media (max-width:620px){.grille-domaines-v2{grid-template-columns:1fr}.grille-domaines-v2 .dom-carte,.grille-domaines-v2 .dom-paysage{grid-column:auto}}
+@media (prefers-reduced-motion:reduce){.grille-domaines-v2 .dom-carte-complete{transition:none}.grille-domaines-v2 .dom-carte-complete:hover{transform:none}}
+
+.grille-domaines-v2 .dom-sans-image .dom-titre-long{color:var(--or)}
+.grille-domaines-v2 .dom-sans-image .dom-texte-carte,.grille-domaines-v2 .dom-sans-image .dom-texte-carte p{color:#E8F1EA}
+.grille-domaines-v2 .dom-sans-image .dom-texte-carte h2{color:var(--or)}
+.grille-domaines-v2 .dom-sans-image .dom-texte-carte strong{color:#fff}
+.dom-texte-carte strong{display:block}

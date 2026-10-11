@@ -5,6 +5,7 @@ ordre: 2
 resume: "Accès à l'eau potable, hygiène et assainissement pour des communautés en meilleure santé."
 image: ""
 affiche: "/images/domaines/eau-assainissement-affiche.jpg"
+format: "paysage"
 ---
 Dans de nombreuses régions, l'absence d'accès à l'eau potable et à des installations sanitaires adéquates compromet la santé, freine la scolarisation des enfants et entrave le développement économique. À l'ONG Sécurité Vie, nous considérons l'eau potable non pas comme une ressource secondaire, mais comme le pilier fondamental de tout progrès humain.
 
