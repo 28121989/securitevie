@@ -5,8 +5,8 @@ accroche: "Protéger la terre qui nous nourrit"
 ordre: 3
 resume: "Reboisement et plantation d'arbres, préservation des écosystèmes, adaptation au changement climatique, prévention des risques sanitaires et environnementaux (HSE) et renforcement de la résilience des communautés face aux risques climatiques (sécheresses, inondations, dégradation des sols)."
 image: ""
-affiche: "/images/domaines/environnement-climat-affiche.jpg"
-vignette: "/images/domaines/environnement-climat-vignette.jpg"
+affiche: ""
+vignette: ""
 format: "paysage"
 intro: "Sécheresses, pluies imprévisibles, sols appauvris : le changement climatique touche déjà la vie des familles."
 piliers:

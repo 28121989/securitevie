@@ -49,7 +49,7 @@ seo_titre: "ONG Sécurité Vie (OSV) – ONG humanitaire à Yamoussoukro, Côte 
 <section class="ac-section ac-blanc" aria-labelledby="t-domaines"><div class="bloc">
 <div class="ac-entete"><div><p class="surtitre">Nos domaines</p><h2 id="t-domaines">Sept domaines, une même mission</h2></div><a class="lien-fleche" href="{{ '/domaines/' | relative_url }}">Tout voir →</a></div>
 <ul class="ac-domaines">
-{% assign doms = site.domaines | sort: "ordre" %}{% for d in doms %}<li><a href="{{ d.url | relative_url }}">{% if d.vignette %}<img src="{{ d.vignette | relative_url }}" alt="" loading="lazy" width="640" height="420">{% else %}<span class="ac-dom-vide" aria-hidden="true"></span>{% endif %}<span>{{ d.title }}</span></a></li>
+{% assign doms = site.domaines | sort: "ordre" %}{% for d in doms %}<li><a href="{{ d.url | relative_url }}">{% if d.vignette and d.vignette != "" %}<img src="{{ d.vignette | relative_url }}" alt="" loading="lazy" width="640" height="420">{% else %}<span class="ac-dom-vide" aria-hidden="true"></span>{% endif %}<span>{{ d.title }}</span></a></li>
 {% endfor %}</ul>
 </div></section>
 

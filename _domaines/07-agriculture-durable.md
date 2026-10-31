@@ -5,8 +5,8 @@ accroche: "Cultiver aujourd'hui sans compromettre demain"
 ordre: 7
 resume: "Des pratiques agricoles plus sûres et durables pour les revenus et la santé des familles."
 image: ""
-affiche: "/images/domaines/agriculture-durable-affiche.jpg"
-vignette: "/images/domaines/agriculture-durable-vignette.jpg"
+affiche: ""
+vignette: ""
 format: "portrait"
 intro: "Sols appauvris, produits chimiques mal utilisés, climat incertain : l'agriculture familiale est fragilisée."
 piliers:

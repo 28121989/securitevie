@@ -5,7 +5,7 @@ accroche: "Chaque trajet doit se terminer à la maison"
 ordre: 5
 resume: "Sensibilisation des usagers, des conducteurs et des travailleurs de la route pour réduire les accidents."
 image: ""
-affiche: "/images/domaines/securite-routiere-affiche.jpg"
+affiche: "/images/actualites/kong-2026-chantier-aeroport.jpg"
 vignette: "/images/domaines/securite-routiere-vignette.jpg"
 format: "paysage"
 intro: "La plupart des accidents de la route sont évitables. Nous agissons pour changer les comportements."

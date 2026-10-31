@@ -5,7 +5,9 @@ accroche: "Rentrer chez soi en bonne santé, chaque jour"
 ordre: 6
 resume: "Prévention des accidents et des maladies professionnelles sur les chantiers et en entreprise."
 image: ""
-affiche: ""
+affiche: "/images/accueil-8-kong-chantier.jpg"
+vignette: "/images/domaines/securite-travail-vignette.jpg"
+format: "paysage"
 intro: "Un accident du travail peut coûter une vie ou priver une famille de son revenu."
 piliers:
   - titre: "Former les travailleurs"

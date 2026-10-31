@@ -11,9 +11,9 @@ description: "Découvrez les 7 domaines d'intervention de l'ONG Sécurité Vie e
 <ul class="dg">
 {% assign doms = site.domaines | sort: "ordre" %}
 {% for d in doms %}
-<li class="dg-carte{% unless d.vignette %} dg-sans-image{% endunless %}">
+<li class="dg-carte{% if d.vignette == nil or d.vignette == "" %} dg-sans-image{% endif %}">
 <a class="dg-lien" href="{{ d.url | relative_url }}">
-{% if d.vignette %}<span class="dg-image"><img src="{{ d.vignette | relative_url }}" alt="" loading="lazy" width="640" height="420"></span>{% else %}<span class="dg-image dg-image-vide" aria-hidden="true"><span>{{ d.title }}</span></span>{% endif %}
+{% if d.vignette and d.vignette != "" %}<span class="dg-image"><img src="{{ d.vignette | relative_url }}" alt="" loading="lazy" width="640" height="420"></span>{% else %}<span class="dg-image dg-image-vide" aria-hidden="true"><span>{{ d.title }}</span></span>{% endif %}
 <span class="dg-texte">
 <span class="dg-nom">{{ d.title }}</span>
 <span class="dg-accroche">{{ d.accroche | default: d.titre_long }}</span>

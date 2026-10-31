@@ -5,8 +5,8 @@ accroche: "L'eau potable, socle d'une communauté autonome"
 ordre: 2
 resume: "Accès à l'eau potable, hygiène et assainissement pour des communautés en meilleure santé."
 image: ""
-affiche: "/images/domaines/eau-assainissement-affiche.jpg"
-vignette: "/images/domaines/eau-assainissement-vignette.jpg"
+affiche: ""
+vignette: ""
 format: "paysage"
 intro: "Sans eau potable ni assainissement, la santé recule, les enfants quittent l'école et l'économie s'essouffle."
 piliers:

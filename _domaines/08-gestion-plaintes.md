@@ -5,9 +5,9 @@ accroche: "Écouter, répondre, rendre compte"
 ordre: 8
 resume: "Mécanismes de recueil et de traitement des plaintes pour des projets transparents et redevables."
 image: ""
-affiche: "/images/domaines/gestion-plaintes-affiche.jpg"
+affiche: "/images/accueil-1-dabakala.jpg"
 vignette: "/images/domaines/gestion-plaintes-vignette.jpg"
-format: "portrait"
+format: "paysage"
 intro: "Un projet ne réussit que s'il a la confiance des populations."
 piliers:
   - titre: "Recueillir"
