@@ -7,7 +7,7 @@
 {% include entete.html %}
 <main id="contenu">
 {% if page.bandeau %}<section class="bandeau-page"><div class="bloc">
-<p class="fil"><a href="{{ '/' | relative_url }}">Accueil</a> <span aria-hidden="true">›</span> Qui sommes-nous <span aria-hidden="true">›</span> {{ page.title }}</p>
+<p class="fil"><a href="{{ '/' | relative_url }}">Accueil</a> <span aria-hidden="true">›</span> {% if page.rubrique %}{{ page.rubrique }} <span aria-hidden="true">›</span> {% endif %}{{ page.title }}</p>
 <h1>{{ page.title }}</h1>
 {% if page.intro %}<p class="bandeau-intro">{{ page.intro }}</p>{% endif %}
 </div></section>{% endif %}

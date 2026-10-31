@@ -14,6 +14,12 @@ collections:
     permalink: /actualites/:name/
   activites:
     output: false
+  temoignages:
+    output: false
+  ressources:
+    output: false
+  offres:
+    output: false
   domaines:
     output: true
     permalink: /domaines/:name/

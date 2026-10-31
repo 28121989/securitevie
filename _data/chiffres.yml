@@ -1,0 +1,10 @@
+# Chiffres clés affichés sur l'accueil (modifiables dans l'espace d'administration)
+chiffres:
+  - valeur: "2023"
+    libelle: "Année de création"
+  - valeur: "7"
+    libelle: "Domaines d'intervention"
+  - valeur: "5"
+    libelle: "Implantations : siège et bureaux techniques"
+  - valeur: "13"
+    libelle: "Partenaires techniques et financiers"

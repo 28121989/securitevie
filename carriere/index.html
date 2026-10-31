@@ -1,0 +1,20 @@
+---
+layout: page
+title: Carrière
+rubrique: "Carrière"
+bandeau: true
+intro: "Appels d'offres, recrutements et bénévolat : rejoignez l'action de l'ONG Sécurité Vie."
+seo_titre: "Carrière : appels d'offres et recrutements"
+description: "Appels d'offres, appels à candidatures, recrutements et bénévolat à l'ONG Sécurité Vie en Côte d'Ivoire."
+---
+{% assign os = site.offres | sort: "date" | reverse %}
+{% assign cats = "Appel d'offres|Appel à candidatures" | split: "|" %}
+{% for c in cats %}{% assign liste = os | where: "type", c %}
+<section class="section-page{% cycle '', ' blanc' %}" id="{% if forloop.first %}appels-offres{% else %}candidatures{% endif %}"><div class="bloc">
+<h2 class="titre-section">{% if forloop.first %}Appels d'offres{% else %}Appels à candidatures{% endif %}</h2>
+{% if liste.size > 0 %}<ul class="docs">
+{% for o in liste %}<li><div><strong>{{ o.title }}</strong>{% if o.resume %}<p>{{ o.resume }}</p>{% endif %}{% if o.date_limite %}<span class="ac-meta">Date limite : {{ o.date_limite }}</span>{% endif %}</div>{% if o.fichier %}<a class="bouton bouton-petit" href="{{ o.fichier | relative_url }}" download>Voir les TDR</a>{% endif %}</li>
+{% endfor %}</ul>
+{% else %}<p class="vide">Aucune offre en cours. Revenez bientôt ou envoyez une candidature spontanée via la page <a href="{{ '/contact/' | relative_url }}">Contacts</a>.</p>{% endif %}
+</div></section>
+{% endfor %}

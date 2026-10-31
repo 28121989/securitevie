@@ -1,0 +1,40 @@
+---
+layout: page
+title: Qui sommes-nous ?
+rubrique: "Présentation"
+bandeau: true
+intro: "Une ONG ivoirienne créée le 15 juin 2023 pour protéger la vie et renforcer la sécurité des personnes et des communautés."
+seo_titre: "Qui sommes-nous ? Vision, mission et valeurs"
+description: "Présentation de l'ONG Sécurité Vie (OSV), ONG ivoirienne basée à Yamoussoukro : vision, mission, valeurs et objectifs."
+---
+{% assign infos = site.data.infos %}
+<section id="mission" class="section-page"><div class="bloc">
+<div class="deux-col">
+<div><p class="surtitre">Notre identité</p><h2>Une ONG ivoirienne au service des communautés</h2></div>
+<div class="pile">
+<p>L'ONG Sécurité Vie (OSV) a son siège à Yamoussoukro et dispose de bureaux techniques à {{ infos.bureaux | join: ", " }} et dans d'autres localités du pays, au plus près des communautés.</p>
+{% if infos.agrement and infos.agrement != "" %}<p><strong>{{ infos.agrement }}</strong></p>{% endif %}
+</div>
+</div>
+{% assign ap = site.data.apropos %}
+<div class="vm">
+<div class="vm-carte vm-vision"><p class="vm-titre">Notre vision</p><p>{{ ap.vision }}</p></div>
+<div class="vm-carte vm-mission"><p class="vm-titre">Notre mission</p><p>{{ ap.mission }}</p></div>
+</div>
+<div class="deux-col" style="margin-top:56px">
+<div>
+<h3 class="sous-titre">Nos valeurs</h3>
+<div class="valeurs">
+{% for v in ap.valeurs %}<div class="valeur"><p class="valeur-titre">{{ v.titre }}</p><p>{{ v.texte }}</p></div>
+{% endfor %}
+</div>
+</div>
+<div>
+<h3 class="sous-titre">Nos objectifs</h3>
+<ol class="objectifs">
+{% for o in ap.objectifs %}<li><span class="num">{{ forloop.index }}</span><span>{{ o }}</span></li>
+{% endfor %}
+</ol>
+</div>
+</div>
+</div></section>

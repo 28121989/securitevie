@@ -116,3 +116,185 @@ content:
         label: Partenaires
         type: string
         list: true
+  - name: diaporama
+    label: Photos du diaporama (accueil)
+    type: file
+    path: _data/diaporama.yml
+    fields:
+      - name: vitesse
+        label: Durée d'affichage de chaque photo (secondes)
+        type: number
+      - name: diapos
+        label: Photos
+        type: object
+        list: true
+        fields:
+          - name: image
+            label: Photo
+            type: image
+          - name: legende
+            label: Légende
+            type: string
+  - name: chiffres
+    label: Chiffres clés (accueil)
+    type: file
+    path: _data/chiffres.yml
+    fields:
+      - name: chiffres
+        label: Chiffres
+        type: object
+        list: true
+        fields:
+          - name: valeur
+            label: Chiffre
+            type: string
+          - name: libelle
+            label: Ce qu'il représente
+            type: string
+  - name: equipe
+    label: Organisation et équipe
+    type: file
+    path: _data/equipe.yml
+    fields:
+      - name: gouvernance
+        label: Organes de gouvernance
+        type: object
+        list: true
+        fields:
+          - name: titre
+            label: Organe
+            type: string
+          - name: texte
+            label: Rôle
+            type: text
+      - name: equipe
+        label: Équipe de direction
+        type: object
+        list: true
+        fields:
+          - name: nom
+            label: Nom
+            type: string
+          - name: fonction
+            label: Fonction
+            type: string
+          - name: photo
+            label: Photo
+            type: image
+  - name: zones
+    label: Zones d'intervention
+    type: file
+    path: _data/zones.yml
+    fields:
+      - name: intro
+        label: Texte de présentation
+        type: text
+      - name: lieux
+        label: Lieux sur la carte
+        type: object
+        list: true
+        fields:
+          - name: nom
+            label: Ville
+            type: string
+          - name: type
+            label: Type (Siège, Bureau technique ou Zone d'intervention)
+            type: string
+          - name: lat
+            label: Latitude
+            type: number
+          - name: lng
+            label: Longitude
+            type: number
+  - name: videos
+    label: Galerie vidéos
+    type: file
+    path: _data/videos.yml
+    fields:
+      - name: videos
+        label: Vidéos YouTube
+        type: object
+        list: true
+        fields:
+          - name: id
+            label: Identifiant YouTube (après youtu.be/)
+            type: string
+          - name: titre
+            label: Titre
+            type: string
+  - name: temoignages
+    label: Témoignages
+    type: collection
+    path: _temoignages
+    view:
+      fields: [title, fonction]
+    fields:
+      - name: title
+        label: Nom de la personne
+        type: string
+        required: true
+      - name: fonction
+        label: Fonction ou qualité
+        type: string
+      - name: citation
+        label: Témoignage
+        type: text
+      - name: photo
+        label: Photo (avec son accord)
+        type: image
+      - name: ordre
+        label: Ordre d'affichage
+        type: number
+  - name: ressources
+    label: Ressources (rapports, publications)
+    type: collection
+    path: _ressources
+    view:
+      fields: [title, categorie, date]
+    fields:
+      - name: title
+        label: Titre du document
+        type: string
+        required: true
+      - name: categorie
+        label: Catégorie
+        type: select
+        options:
+          values: [Rapports et publications, Bonnes pratiques]
+      - name: date
+        label: Date
+        type: date
+      - name: resume
+        label: Résumé
+        type: text
+      - name: fichier
+        label: Fichier PDF
+        type: file
+  - name: offres
+    label: Carrière (appels d'offres et candidatures)
+    type: collection
+    path: _offres
+    view:
+      fields: [title, type, date_limite]
+    fields:
+      - name: title
+        label: Intitulé
+        type: string
+        required: true
+      - name: type
+        label: Type
+        type: select
+        options:
+          values: [Appel d'offres, Appel à candidatures]
+      - name: date
+        label: Date de publication
+        type: date
+      - name: date_limite
+        label: Date limite (ex. 30 novembre 2026)
+        type: string
+      - name: resume
+        label: Résumé
+        type: text
+      - name: fichier
+        label: TDR / avis (PDF)
+        type: file

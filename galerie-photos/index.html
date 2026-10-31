@@ -1,0 +1,16 @@
+---
+layout: page
+title: Galerie photos
+rubrique: "Actualités"
+bandeau: true
+intro: "Nos activités en images, sur le terrain et avec nos partenaires."
+seo_titre: "Galerie photos des activités"
+description: "Photos des activités de l'ONG Sécurité Vie en Côte d'Ivoire : sensibilisation, ateliers, campagnes communautaires."
+---
+{% assign diapo = site.data.diaporama %}{% assign acts = site.activites | sort: "ordre" %}
+<section class="section-page"><div class="bloc">
+<div class="galerie">
+{% for d in diapo.diapos %}<figure><img src="{{ d.image | relative_url }}" alt="{{ d.legende | escape }}" loading="lazy">{% if d.legende and d.legende != "" %}<figcaption>{{ d.legende }}</figcaption>{% endif %}</figure>
+{% endfor %}
+</div>
+</div></section>

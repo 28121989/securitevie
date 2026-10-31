@@ -4,6 +4,7 @@ title: Accueil
 seo_titre: "ONG Sécurité Vie (OSV) – ONG humanitaire à Yamoussoukro, Côte d'Ivoire"
 ---
 {% assign infos = site.data.infos %}
+{% assign ap = site.data.apropos %}
 
 {% assign diapo = site.data.diaporama %}
 <section id="accueil" class="heros avec-diapos" aria-label="Accueil">
@@ -33,33 +34,58 @@ seo_titre: "ONG Sécurité Vie (OSV) – ONG humanitaire à Yamoussoukro, Côte 
 })();
 </script>
 
-<section id="mission"><div class="bloc">
-<div class="deux-col">
-<div><p class="surtitre">Qui sommes-nous</p><h2>Une ONG ivoirienne au service des communautés</h2></div>
-<div class="pile">
-<p>L'ONG Sécurité Vie (OSV) a son siège à Yamoussoukro et dispose de bureaux techniques à {{ infos.bureaux | join: ", " }} et dans d'autres localités du pays, au plus près des communautés.</p>
-{% if infos.agrement and infos.agrement != "" %}<p><strong>{{ infos.agrement }}</strong></p>{% endif %}
+<section class="ac-section" aria-labelledby="t-faire"><div class="bloc ac-faire">
+<div class="ac-faire-texte">
+<p class="surtitre">Ce que nous faisons</p>
+<h2 id="t-faire">Agir pour sauver des vies au quotidien</h2>
+<p class="ac-lead">{{ ap.mission }}</p>
+<div class="ac-boutons"><a class="bouton" href="{{ '/qui-sommes-nous/' | relative_url }}">Notre mission</a><a class="lien-fleche" href="{{ '/domaines/' | relative_url }}">Nos domaines d'intervention →</a></div>
 </div>
-</div>
-{% assign ap = site.data.apropos %}
-<div class="vm">
-<div class="vm-carte vm-vision"><p class="vm-titre">Notre vision</p><p>{{ ap.vision }}</p></div>
-<div class="vm-carte vm-mission"><p class="vm-titre">Notre mission</p><p>{{ ap.mission }}</p></div>
-</div>
-<div class="deux-col" style="margin-top:56px">
-<div>
-<h3 class="sous-titre">Nos valeurs</h3>
-<div class="valeurs">
-{% for v in ap.valeurs %}<div class="valeur"><p class="valeur-titre">{{ v.titre }}</p><p>{{ v.texte }}</p></div>
-{% endfor %}
-</div>
-</div>
-<div>
-<h3 class="sous-titre">Nos objectifs</h3>
-<ol class="objectifs">
-{% for o in ap.objectifs %}<li><span class="num">{{ forloop.index }}</span><span>{{ o }}</span></li>
-{% endfor %}
-</ol>
-</div>
-</div>
+<ul class="ac-chiffres">
+{% for c in site.data.chiffres.chiffres %}<li><span class="ac-valeur">{{ c.valeur }}</span><span class="ac-libelle">{{ c.libelle }}</span></li>
+{% endfor %}</ul>
 </div></section>
+
+<section class="ac-section ac-blanc" aria-labelledby="t-domaines"><div class="bloc">
+<div class="ac-entete"><div><p class="surtitre">Nos domaines</p><h2 id="t-domaines">Sept domaines, une même mission</h2></div><a class="lien-fleche" href="{{ '/domaines/' | relative_url }}">Tout voir →</a></div>
+<ul class="ac-domaines">
+{% assign doms = site.domaines | sort: "ordre" %}{% for d in doms %}<li><a href="{{ d.url | relative_url }}">{% if d.vignette %}<img src="{{ d.vignette | relative_url }}" alt="" loading="lazy" width="640" height="420">{% else %}<span class="ac-dom-vide" aria-hidden="true"></span>{% endif %}<span>{{ d.title }}</span></a></li>
+{% endfor %}</ul>
+</div></section>
+
+{% assign actus = site.actualites | sort: "date" | reverse %}{% assign offres = site.offres | sort: "date" | reverse %}
+<section class="ac-section" aria-labelledby="t-actu"><div class="bloc">
+<div class="ac-entete"><div><p class="surtitre">Notre actualité</p><h2 id="t-actu">Les dernières nouvelles</h2></div><a class="lien-fleche" href="{{ '/actualites/' | relative_url }}">Toute l'actualité →</a></div>
+<div class="ac-cartes">
+{% for o in offres limit: 2 %}<article class="ac-carte ac-offre"><div class="ac-carte-corps"><p class="ac-meta">{{ o.type | default: "Appel d'offres" }}{% if o.date_limite %} · jusqu'au {{ o.date_limite }}{% endif %}</p><h3>{{ o.title }}</h3><p>{{ o.resume }}</p><a class="lien-fleche" href="{{ '/carriere/' | relative_url }}">Voir l'offre →</a></div></article>
+{% endfor %}{% for n in actus limit: 3 %}<article class="ac-carte">{% if n.image and n.image != "" %}<img src="{{ n.image | relative_url }}" alt="" loading="lazy">{% endif %}<div class="ac-carte-corps"><p class="ac-meta">{{ n.date | date: "%d/%m/%Y" }}</p><h3><a href="{{ n.url | relative_url }}">{{ n.title }}</a></h3><p>{{ n.resume }}</p></div></article>
+{% endfor %}</div>
+</div></section>
+
+{% assign z = site.data.zones %}
+<section class="ac-section ac-bleu" aria-labelledby="t-zones"><div class="bloc ac-zones">
+<div class="ac-zones-texte">
+<p class="surtitre">Nos zones d'intervention</p>
+<h2 id="t-zones">Au plus près des communautés</h2>
+<p>{{ z.intro }}</p>
+<ul class="ac-lieux">{% for l in z.lieux %}<li><strong>{{ l.nom }}</strong><span>{{ l.type }}</span></li>{% endfor %}</ul>
+<a class="lien-fleche lien-clair" href="{{ '/zones-intervention/' | relative_url }}">Lire plus →</a>
+</div>
+{% include carte-zones.html %}
+</div></section>
+
+<section class="ac-section" aria-labelledby="t-act"><div class="bloc">
+<div class="ac-entete"><div><p class="surtitre">Nos récentes activités</p><h2 id="t-act">Sur le terrain</h2></div><a class="lien-fleche" href="{{ '/realisations/' | relative_url }}">Tous nos projets →</a></div>
+<div class="ac-cartes">
+{% assign acts = site.activites | sort: "ordre" %}{% for a in acts limit: 3 %}<article class="ac-carte">{% if a.image and a.image != "" %}<img src="{{ a.image | relative_url }}" alt="" loading="lazy">{% endif %}<div class="ac-carte-corps"><p class="ac-meta">{{ a.lieu }}{% if a.periode %} · {{ a.periode }}{% endif %}</p><h3>{{ a.title }}</h3><p>{{ a.description | truncatewords: 26 }}</p></div></article>
+{% endfor %}</div>
+</div></section>
+
+{% if site.temoignages.size > 0 %}
+<section class="ac-section ac-blanc" aria-labelledby="t-tem"><div class="bloc">
+<div class="ac-entete"><div><p class="surtitre">Nos témoignages</p><h2 id="t-tem">Ils parlent de notre action</h2></div><a class="lien-fleche" href="{{ '/temoignages/' | relative_url }}">Tous les témoignages →</a></div>
+{% include temoignages.html limite=3 %}
+</div></section>
+{% endif %}
+
+{% include newsletter.html %}

@@ -1,0 +1,22 @@
+---
+layout: page
+title: Organisation
+rubrique: "Présentation"
+bandeau: true
+intro: "Une gouvernance claire et une équipe engagée au service des communautés."
+seo_titre: "Organisation et gouvernance"
+description: "Gouvernance et équipe de direction de l'ONG Sécurité Vie (OSV), Yamoussoukro, Côte d'Ivoire."
+---
+{% assign e = site.data.equipe %}
+<section class="section-page"><div class="bloc">
+<h2 class="titre-section">Notre gouvernance</h2>
+<ol class="gouv">
+{% for g in e.gouvernance %}<li><h3>{{ g.titre }}</h3><p>{{ g.texte }}</p></li>
+{% endfor %}</ol>
+</div></section>
+<section class="section-page blanc"><div class="bloc">
+<h2 class="titre-section">Notre équipe de direction</h2>
+<ul class="equipe">
+{% for p in e.equipe %}<li>{% if p.photo and p.photo != "" %}<img src="{{ p.photo | relative_url }}" alt="">{% else %}<span class="equipe-initiales" aria-hidden="true">{{ p.nom | slice: 0 }}</span>{% endif %}<strong>{{ p.nom }}</strong><span>{{ p.fonction }}</span></li>
+{% endfor %}</ul>
+</div></section>

@@ -1,0 +1,17 @@
+# Équipe de direction (à compléter ou corriger dans l'espace d'administration)
+gouvernance:
+  - titre: "Conseil d'administration"
+    texte: "Présidé par le Président du Conseil d'administration (PCA), il définit les grandes orientations de l'ONG et contrôle leur mise en œuvre."
+  - titre: "Direction exécutive"
+    texte: "Elle conduit la stratégie, la mobilisation des ressources et les relations avec les partenaires."
+  - titre: "Direction des programmes"
+    texte: "Elle pilote la conception, la mise en œuvre, le suivi et l'évaluation des projets sur le terrain."
+  - titre: "Bureaux techniques"
+    texte: "Ils mettent en œuvre les activités au plus près des communautés, en lien avec les autorités locales."
+equipe:
+  - nom: "KEAN DION Anselme"
+    fonction: "Directeur exécutif"
+    photo: ""
+  - nom: "KELY Céba Thimothée"
+    fonction: "Directeur des programmes"
+    photo: ""

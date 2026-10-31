@@ -1,0 +1,16 @@
+---
+layout: page
+title: Galerie vidéos
+rubrique: "Actualités"
+bandeau: true
+intro: "Reportages, interviews et temps forts de nos activités."
+seo_titre: "Galerie vidéos"
+description: "Vidéos de l'ONG Sécurité Vie : reportages, interviews et campagnes de sensibilisation en Côte d'Ivoire."
+---
+{% assign v = site.data.videos.videos %}
+<section class="section-page"><div class="bloc">
+{% if v and v.size > 0 %}<div class="videos">
+{% for x in v %}<figure class="video"><div class="video-cadre"><iframe src="https://www.youtube-nocookie.com/embed/{{ x.id }}" title="{{ x.titre | escape }}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>{% if x.titre %}<figcaption>{{ x.titre }}</figcaption>{% endif %}</figure>
+{% endfor %}</div>
+{% else %}<p class="vide">Nos premières vidéos arrivent bientôt. Suivez-nous sur <a href="{{ site.data.reseaux.facebook }}">Facebook</a> en attendant.</p>{% endif %}
+</div></section>

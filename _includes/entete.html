@@ -19,27 +19,52 @@
 <nav id="menu-principal" class="menu" aria-label="Menu principal">
 <a href="{{ accueil }}"{% if page.url == "/" %} aria-current="page"{% endif %}>Accueil</a>
 <div class="sous-menu-bloc">
-<button type="button" class="sous-menu-bouton" aria-expanded="false" aria-controls="sous-menu-qsn">Qui sommes-nous <span class="fleche" aria-hidden="true"></span></button>
-<div id="sous-menu-qsn" class="sous-menu">
-<a href="{{ '/domaines/' | relative_url }}"><strong>Nos domaines</strong><span>Nos 8 domaines d'intervention</span></a>
-<a href="{{ '/realisations/' | relative_url }}"><strong>Nos réalisations</strong><span>Nos projets sur le terrain</span></a>
-<a href="{{ '/actualites/' | relative_url }}"><strong>Notre actualité</strong><span>Événements et nouvelles</span></a>
+<button type="button" class="sous-menu-bouton" aria-expanded="false" aria-controls="sm-0">Présentation <span class="fleche" aria-hidden="true"></span></button>
+<div id="sm-0" class="sous-menu">
+<a href="{{ '/qui-sommes-nous/' | relative_url }}"><strong>Qui sommes-nous ?</strong><span>Vision, mission et valeurs</span></a>
+<a href="{{ '/domaines/' | relative_url }}"><strong>Que faisons-nous</strong><span>Nos 7 domaines d'intervention</span></a>
+<a href="{{ '/organisation/' | relative_url }}"><strong>Organisation</strong><span>Gouvernance et équipe</span></a>
+<a href="{{ '/zones-intervention/' | relative_url }}"><strong>Zones d'intervention</strong><span>Siège et bureaux techniques</span></a>
 </div>
 </div>
-<a href="{{ '/contact/' | relative_url }}"{% if page.url == "/contact/" %} aria-current="page"{% endif %}>Contact</a>
-<a class="bouton menu-cta" href="{{ '/contact/' | relative_url }}">Devenir partenaire</a>
+<div class="sous-menu-bloc">
+<button type="button" class="sous-menu-bouton" aria-expanded="false" aria-controls="sm-1">Actualités <span class="fleche" aria-hidden="true"></span></button>
+<div id="sm-1" class="sous-menu">
+<a href="{{ '/actualites/' | relative_url }}"><strong>Activités</strong><span>Nos dernières nouvelles</span></a>
+<a href="{{ '/galerie-photos/' | relative_url }}"><strong>Galerie photos</strong><span>Nos activités en images</span></a>
+<a href="{{ '/galerie-videos/' | relative_url }}"><strong>Galerie vidéos</strong><span>Reportages et interviews</span></a>
+<a href="{{ '/temoignages/' | relative_url }}"><strong>Témoignages</strong><span>La parole aux communautés</span></a>
+</div>
+</div>
+<div class="sous-menu-bloc">
+<button type="button" class="sous-menu-bouton" aria-expanded="false" aria-controls="sm-2">Ressources <span class="fleche" aria-hidden="true"></span></button>
+<div id="sm-2" class="sous-menu">
+<a href="{{ '/ressources/' | relative_url }}"><strong>Rapports et publications</strong><span>Documents à télécharger</span></a>
+<a href="{{ '/ressources/#bonnes-pratiques' | relative_url }}"><strong>Bonnes pratiques</strong><span>Ce que nous avons appris</span></a>
+</div>
+</div>
+<div class="sous-menu-bloc">
+<button type="button" class="sous-menu-bouton" aria-expanded="false" aria-controls="sm-3">Carrière <span class="fleche" aria-hidden="true"></span></button>
+<div id="sm-3" class="sous-menu">
+<a href="{{ '/carriere/#appels-offres' | relative_url }}"><strong>Appels d'offres</strong><span>Consultations en cours</span></a>
+<a href="{{ '/carriere/#candidatures' | relative_url }}"><strong>Appels à candidatures</strong><span>Recrutements et bénévolat</span></a>
+</div>
+</div>
+<a href="{{ '/realisations/' | relative_url }}"{% if page.url == "/realisations/" %} aria-current="page"{% endif %}>Projets</a>
+<a href="{{ '/contact/' | relative_url }}"{% if page.url == "/contact/" %} aria-current="page"{% endif %}>Contacts</a>
 </nav>
 </div></header>
 <script>
 (function(){
   var e=document.getElementById('entete'), b=e.querySelector('.burger'), m=document.getElementById('menu-principal');
   b.addEventListener('click',function(){ var o=b.getAttribute('aria-expanded')==='true'; b.setAttribute('aria-expanded',String(!o)); m.classList.toggle('ouvert',!o); });
-  var sb=e.querySelector('.sous-menu-bouton'), bloc=e.querySelector('.sous-menu-bloc');
-  function sous(o){ sb.setAttribute('aria-expanded',String(o)); bloc.classList.toggle('ouvert',o); }
-  sb.addEventListener('click',function(ev){ ev.stopPropagation(); sous(sb.getAttribute('aria-expanded')!=='true'); });
-  document.addEventListener('click',function(ev){ if(!bloc.contains(ev.target)) sous(false); });
-  document.addEventListener('keydown',function(ev){ if(ev.key==='Escape'){ sous(false); sb.focus(); } });
-  m.addEventListener('click',function(ev){ if(ev.target.closest('a')){ b.setAttribute('aria-expanded','false'); m.classList.remove('ouvert'); sous(false); } });
+  var blocs=[].slice.call(e.querySelectorAll('.sous-menu-bloc'));
+  function fermer(sauf){ blocs.forEach(function(x){ if(x!==sauf){ x.classList.remove('ouvert'); x.querySelector('.sous-menu-bouton').setAttribute('aria-expanded','false'); } }); }
+  blocs.forEach(function(x){ var bt=x.querySelector('.sous-menu-bouton');
+    bt.addEventListener('click',function(ev){ ev.stopPropagation(); var o=bt.getAttribute('aria-expanded')!=='true'; fermer(x); bt.setAttribute('aria-expanded',String(o)); x.classList.toggle('ouvert',o); }); });
+  document.addEventListener('click',function(ev){ if(!ev.target.closest('.sous-menu-bloc')) fermer(); });
+  document.addEventListener('keydown',function(ev){ if(ev.key==='Escape') fermer(); });
+  m.addEventListener('click',function(ev){ if(ev.target.closest('a')){ b.setAttribute('aria-expanded','false'); m.classList.remove('ouvert'); fermer(); } });
   function ombre(){ e.classList.toggle('defile', window.scrollY>10); }
   window.addEventListener('scroll',ombre,{passive:true}); ombre();
 })();

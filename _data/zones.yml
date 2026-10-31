@@ -1,0 +1,26 @@
+intro: "Basée à Yamoussoukro, l'ONG Sécurité Vie intervient au plus près des communautés grâce à ses bureaux techniques dans le centre et le nord de la Côte d'Ivoire."
+lieux:
+  - nom: "Yamoussoukro"
+    type: "Siège"
+    lat: 6.8276
+    lng: -5.2893
+  - nom: "Korhogo"
+    type: "Bureau technique"
+    lat: 9.4580
+    lng: -5.6296
+  - nom: "Dabakala"
+    type: "Bureau technique"
+    lat: 8.3633
+    lng: -4.4333
+  - nom: "Kong"
+    type: "Bureau technique"
+    lat: 9.1510
+    lng: -4.6100
+  - nom: "Touba"
+    type: "Bureau technique"
+    lat: 8.2833
+    lng: -7.6833
+  - nom: "Katiola"
+    type: "Zone d'intervention"
+    lat: 8.1333
+    lng: -5.1000

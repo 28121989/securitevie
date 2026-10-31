@@ -1,0 +1,11 @@
+<section class="newsletter" aria-labelledby="t-news"><div class="bloc newsletter-bloc">
+<div><h2 id="t-news">Notre newsletter</h2><p>Recevez nos actualités, nos activités et nos appels à candidatures.</p></div>
+<form class="newsletter-form" action="https://formsubmit.co/{{ site.data.reseaux.email_formulaire }}" method="POST">
+<input type="hidden" name="_subject" value="Nouvelle inscription à la newsletter OSV">
+<input type="hidden" name="_next" value="{{ '/merci/' | absolute_url }}">
+<input type="text" name="_honey" class="masque" tabindex="-1" autocomplete="off" aria-hidden="true">
+<label for="nl-email" class="masque">Votre adresse e-mail</label>
+<input id="nl-email" type="email" name="email" placeholder="Votre adresse e-mail" required autocomplete="email">
+<button type="submit" class="bouton">S'abonner</button>
+</form>
+</div></section>

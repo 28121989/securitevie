@@ -1,0 +1,22 @@
+{% assign z = site.data.zones %}
+<div class="carte-zones">
+<div id="carte-osv" class="carte-osv" role="img" aria-label="Carte des implantations de l'ONG Sécurité Vie en Côte d'Ivoire"></div>
+</div>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function(){
+  if(!window.L) return;
+  var lieux={{ z.lieux | jsonify }};
+  var carte=L.map('carte-osv',{scrollWheelZoom:false}).setView([7.6,-5.5],6);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:12,attribution:'&copy; OpenStreetMap'}).addTo(carte);
+  var pts=[];
+  lieux.forEach(function(l){
+    var siege=l.type==='Siège';
+    var m=L.circleMarker([l.lat,l.lng],{radius:siege?11:8,color:'#fff',weight:2,fillColor:siege?'#F2B705':(l.type==='Bureau technique'?'#1F4E79':'#2E7D4F'),fillOpacity:1}).addTo(carte);
+    m.bindTooltip('<strong>'+l.nom+'</strong><br>'+l.type);
+    pts.push([l.lat,l.lng]);
+  });
+  if(pts.length) carte.fitBounds(pts,{padding:[30,30]});
+})();
+</script>

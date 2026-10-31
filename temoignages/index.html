@@ -1,0 +1,12 @@
+---
+layout: page
+title: Témoignages
+rubrique: "Actualités"
+bandeau: true
+intro: "La parole aux communautés, aux partenaires et à nos équipes."
+seo_titre: "Témoignages"
+description: "Témoignages de bénéficiaires, de partenaires et de membres de l'ONG Sécurité Vie."
+---
+<section class="section-page"><div class="bloc">
+{% if site.temoignages.size > 0 %}{% include temoignages.html limite=100 %}{% else %}<p class="vide">Les premiers témoignages seront bientôt publiés.</p>{% endif %}
+</div></section>

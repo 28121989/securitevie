@@ -1,0 +1,7 @@
+{% assign tems = site.temoignages | sort: "ordre" %}
+<div class="tem-grille">
+{% for t in tems limit: include.limite %}<figure class="tem">
+<blockquote><p>{{ t.citation }}</p></blockquote>
+<figcaption>{% if t.photo and t.photo != "" %}<img src="{{ t.photo | relative_url }}" alt="">{% endif %}<span><strong>{{ t.title }}</strong>{% if t.fonction %}<br>{{ t.fonction }}{% endif %}</span></figcaption>
+</figure>
+{% endfor %}</div>

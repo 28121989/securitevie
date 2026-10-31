@@ -1,0 +1,20 @@
+---
+layout: page
+title: Ressources
+rubrique: "Ressources"
+bandeau: true
+intro: "Rapports, publications et bonnes pratiques à consulter et à télécharger."
+seo_titre: "Ressources : rapports, publications et bonnes pratiques"
+description: "Rapports d'activités, publications et bonnes pratiques de l'ONG Sécurité Vie à télécharger."
+---
+{% assign rs = site.ressources | sort: "date" | reverse %}
+{% assign cats = "Rapports et publications|Bonnes pratiques" | split: "|" %}
+{% for c in cats %}{% assign liste = rs | where: "categorie", c %}
+<section class="section-page{% cycle '', ' blanc' %}" id="{% if forloop.last %}bonnes-pratiques{% else %}rapports{% endif %}"><div class="bloc">
+<h2 class="titre-section">{{ c }}</h2>
+{% if liste.size > 0 %}<ul class="docs">
+{% for r in liste %}<li><div><strong>{{ r.title }}</strong>{% if r.resume %}<p>{{ r.resume }}</p>{% endif %}<span class="ac-meta">{{ r.date | date: "%m/%Y" }}</span></div>{% if r.fichier %}<a class="bouton bouton-petit" href="{{ r.fichier | relative_url }}" download>Télécharger</a>{% endif %}</li>
+{% endfor %}</ul>
+{% else %}<p class="vide">Aucun document publié pour le moment.</p>{% endif %}
+</div></section>
+{% endfor %}
