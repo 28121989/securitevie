@@ -77,7 +77,7 @@ seo_titre: "ONG Sécurité Vie (OSV) – ONG humanitaire à Yamoussoukro, Côte 
 <section class="ac-section" aria-labelledby="t-act"><div class="bloc">
 <div class="ac-entete"><div><p class="surtitre">Nos récentes activités</p><h2 id="t-act">Sur le terrain</h2></div><a class="lien-fleche" href="{{ '/realisations/' | relative_url }}">Tous nos projets →</a></div>
 <div class="ac-cartes">
-{% assign acts = site.activites | sort: "ordre" %}{% for a in acts limit: 3 %}<article class="ac-carte">{% if a.image and a.image != "" %}<img src="{{ a.image | relative_url }}" alt="" loading="lazy">{% endif %}<div class="ac-carte-corps"><p class="ac-meta">{{ a.lieu }}{% if a.periode %} · {{ a.periode }}{% endif %}</p><h3>{{ a.title }}</h3><p>{{ a.description | truncatewords: 26 }}</p></div></article>
+{% assign acts = site.activites | sort: "ordre" %}{% for a in acts limit: 3 %}<article class="ac-carte">{% if a.image and a.image != "" %}<img src="{{ a.image | relative_url }}" alt="" loading="lazy">{% endif %}<div class="ac-carte-corps"><p class="ac-meta">{% if a.lieu and a.lieu != "" %}{{ a.lieu }}{% if a.periode and a.periode != "" %} · {% endif %}{% endif %}{{ a.periode }}</p><h3>{{ a.title }}</h3><p>{{ a.description | truncatewords: 26 }}</p></div></article>
 {% endfor %}</div>
 </div></section>
 

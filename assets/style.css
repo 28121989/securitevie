@@ -489,3 +489,28 @@ h1,h2,.marque-nom,.vm-titre,.form-titre,.dom-titre-long,.titre-contact{font-weig
 .art-photos figure{margin:0}
 .art-photos img{width:100%;height:230px;object-fit:cover;border-radius:10px}
 .art-photos figcaption{font-size:14px;color:#5B6763;margin-top:6px}
+
+/* Bouton « Devenir partenaire » dans le menu */
+.menu a.menu-partenaire{margin-left:8px;padding:9px 16px;border:2px solid var(--vert);border-radius:6px;color:var(--vert);font-weight:700}
+.menu a.menu-partenaire::after{display:none}
+.menu a.menu-partenaire:hover{background:var(--vert);color:#fff}
+@media (max-width:1060px){.menu a.menu-partenaire{margin:12px 0 0;text-align:center;border:2px solid var(--vert);border-radius:6px}}
+
+/* Portefeuille des projets (lecture bailleurs) */
+.portefeuille{overflow-x:auto;margin:0 0 48px;border-top:3px solid var(--vert)}
+.portefeuille table{width:100%;min-width:720px;border-collapse:collapse;background:#fff;font-size:15.5px}
+.portefeuille th{text-align:left;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:#5B6763;padding:12px 14px;border-bottom:1px solid var(--trait)}
+.portefeuille td{padding:14px;border-bottom:1px solid var(--trait);vertical-align:top}
+.portefeuille td:first-child{font-weight:700;color:var(--vert)}
+.portefeuille td.periode{white-space:nowrap}
+.carte .partenaires{font-size:14px;color:#5B6763;margin:8px 0 0}
+.carte .partenaires b{color:var(--vert)}
+
+/* Consentement des formulaires */
+.consentement{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.45;color:#5B6763;margin:4px 0 8px}
+.consentement input{width:auto;margin-top:3px;flex:none}
+.texte-long{max-width:760px}
+.texte-long h2{font-size:1.3rem;color:var(--vert);margin:32px 0 8px}
+.texte-long h2:first-child{margin-top:0}
+.nl-mention{flex-basis:100%;font-size:13px;opacity:.8;margin:6px 0 0}
+.nl-mention a{color:inherit}

@@ -20,6 +20,7 @@
 <meta property="og:title" content="{{ t | escape }}">
 <meta property="og:description" content="{{ d | escape }}">
 <meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta property="og:image" content="{{ img | absolute_url | replace: ' ', '%20' }}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="any">

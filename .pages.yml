@@ -44,6 +44,9 @@ content:
       - name: periode
         label: Période (ex. 2025-2026)
         type: string
+      - name: partenaires
+        label: Partenaires et financement (donneur d’ordre, bailleur)
+        type: string
       - name: image
         label: Photo
         type: image
