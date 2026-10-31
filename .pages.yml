@@ -116,6 +116,22 @@ content:
         label: Partenaires
         type: string
         list: true
+  - name: galerie
+    label: Galerie photos
+    type: file
+    path: _data/galerie.yml
+    fields:
+      - name: photos
+        label: Photos (les plus récentes en haut)
+        type: object
+        list: true
+        fields:
+          - name: image
+            label: Photo
+            type: image
+          - name: legende
+            label: Légende
+            type: string
   - name: diaporama
     label: Photos du diaporama (accueil)
     type: file

@@ -482,3 +482,10 @@ h1,h2,.marque-nom,.vm-titre,.form-titre,.dom-titre-long,.titre-contact{font-weig
 @media (prefers-reduced-motion:reduce){.ac-domaines img{transition:none}.ac-domaines a:hover img{transform:none}}
 /* Menu à 7 entrées : plus compact */
 @media (min-width:1061px){.menu a:not(.bouton),.sous-menu-bouton{padding:10px 10px;font-size:15px}.menu a:not(.bouton)::after{left:10px;right:10px}.marque-sous{max-width:250px}.marque img{height:64px;width:64px}}
+
+.article .corps h3{color:var(--vert);font-size:1.25rem;margin:16px 0 0}
+.article .corps blockquote{margin:8px 0;padding:14px 20px;border-left:4px solid var(--accent);background:var(--sable);border-radius:0 10px 10px 0;font-style:italic}
+.art-photos{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:8px 0}
+.art-photos figure{margin:0}
+.art-photos img{width:100%;height:230px;object-fit:cover;border-radius:10px}
+.art-photos figcaption{font-size:14px;color:#5B6763;margin-top:6px}

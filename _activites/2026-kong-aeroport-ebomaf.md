@@ -1,8 +1,8 @@
 ---
-title: "Sensibilisation sur le chantier de l'aéroport de Kong"
+title: "Sensibilisation IST/VIH, VBG et sécurité routière : chantier de l'aéroport de Kong"
 lieu: "Kong"
-periode: "Novembre – décembre 2026"
-image: ""
-description: "Avec l'entreprise EBOMAF : sensibilisation des travailleurs et des communautés au VIH/IST, aux VBG et EAS/HS et à la sécurité routière, vaccination des travailleurs et mécanisme de gestion des plaintes."
+periode: "Octobre – décembre 2026"
+image: "/images/actualites/kong-2026-chantier-aeroport.jpg"
+description: "Donneur d'ordre : EBOMAF. Campagne de prévention auprès des travailleurs, des riverains, des chauffeurs, des jeunes et des élèves : concertation avec les autorités et les leaders communautaires, panneaux de sensibilisation aux abords du chantier, journée sportive fédératrice, dépistage volontaire du VIH et mesure des résultats par enquête CAP."
 ordre: 1
 ---
