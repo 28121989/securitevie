@@ -47,6 +47,9 @@ content:
       - name: partenaires
         label: Partenaires et financement (donneur d’ordre, bailleur)
         type: string
+      - name: attestation
+        label: Attestation de bonne exécution (qui l’a délivrée et quand)
+        type: string
       - name: image
         label: Photo
         type: image

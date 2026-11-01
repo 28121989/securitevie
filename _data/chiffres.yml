@@ -2,9 +2,9 @@
 chiffres:
   - valeur: "2023"
     libelle: "Année de création"
-  - valeur: "7"
-    libelle: "Domaines d'intervention"
-  - valeur: "5"
-    libelle: "Implantations : siège et bureaux techniques"
+  - valeur: "3"
+    libelle: "Attestations de bonne exécution délivrées par nos partenaires"
+  - valeur: "325"
+    libelle: "Kilomètres de chantiers routiers accompagnés (PCR-CI)"
   - valeur: "13"
     libelle: "Partenaires techniques et financiers"

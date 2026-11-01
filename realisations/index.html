@@ -11,15 +11,15 @@ description: "Projets et activités de l'ONG Sécurité Vie en Côte d'Ivoire : 
 {% assign activites = site.activites | sort: "ordre" %}
 <h2 class="titre-section">Notre portefeuille de projets</h2>
 <div class="portefeuille"><table>
-<thead><tr><th scope="col">Projet</th><th scope="col">Zone</th><th scope="col">Partenaires et financement</th><th scope="col">Période</th></tr></thead>
-<tbody>{% for a in activites %}<tr><td>{{ a.title }}</td><td>{{ a.lieu | default: "—" }}</td><td>{{ a.partenaires | default: "—" }}</td><td class="periode">{{ a.periode }}</td></tr>{% endfor %}</tbody>
+<thead><tr><th scope="col">Projet</th><th scope="col">Zone</th><th scope="col">Partenaires et financement</th><th scope="col">Période</th><th scope="col">Référence</th></tr></thead>
+<tbody>{% for a in activites %}<tr><td>{{ a.title }}</td><td>{{ a.lieu | default: "—" }}</td><td>{{ a.partenaires | default: "—" }}</td><td class="periode">{{ a.periode }}</td><td>{% if a.attestation and a.attestation != "" %}<span class="badge-attest">Attestation de bonne exécution</span>{% else %}—{% endif %}</td></tr>{% endfor %}</tbody>
 </table></div>
 <h2 class="titre-section">Nos projets sur le terrain</h2>
 <div class="grille">
 {% for a in activites %}
 <article class="carte">
 {% if a.image and a.image != "" %}<img src="{{ a.image | relative_url }}" alt="">{% endif %}
-<div class="contenu"><p class="meta">{% if a.lieu and a.lieu != "" %}{{ a.lieu }}{% if a.periode and a.periode != "" %} · {% endif %}{% endif %}{{ a.periode }}</p><h3>{{ a.title }}</h3><p>{{ a.description }}</p>{% if a.partenaires and a.partenaires != "" %}<p class="partenaires"><b>Partenaires :</b> {{ a.partenaires }}</p>{% endif %}</div>
+<div class="contenu"><p class="meta">{% if a.lieu and a.lieu != "" %}{{ a.lieu }}{% if a.periode and a.periode != "" %} · {% endif %}{% endif %}{{ a.periode }}</p><h3>{{ a.title }}</h3><p>{{ a.description }}</p>{% if a.partenaires and a.partenaires != "" %}<p class="partenaires"><b>Partenaires :</b> {{ a.partenaires }}</p>{% endif %}{% if a.attestation and a.attestation != "" %}<p class="attest">✓ {{ a.attestation }}</p>{% endif %}</div>
 </article>
 {% endfor %}
 </div>

@@ -668,7 +668,7 @@ h2{font-size:clamp(1.5rem,2.6vw,2.05rem)}
 /* ===== Notre parcours : ligne du temps ===== */
 .parcours-intro{max-width:760px;color:#4A5160;margin:-6px 0 34px}
 .parcours-intro strong{color:var(--prune)}
-.frise-osv{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:22px;position:relative}
+.frise-osv{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:22px;position:relative}
 .frise-osv::before{content:"";position:absolute;left:0;right:0;top:34px;border-top:2px dashed rgba(94,45,134,.35)}
 .frise-osv li{position:relative;display:flex;flex-direction:column;gap:6px;padding-top:0}
 .fo-date{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--terre);min-height:18px}
@@ -681,3 +681,5 @@ h2{font-size:clamp(1.5rem,2.6vw,2.05rem)}
 @media (max-width:900px){.frise-osv{grid-template-columns:1fr;gap:18px;padding-left:30px}.frise-osv::before{top:0;bottom:0;left:8px;right:auto;border-top:0;border-left:2px dashed rgba(94,45,134,.35)}.fo-point{position:absolute;left:-30px;top:0;margin:0}}
 @media (prefers-reduced-motion:reduce){.frise-osv li:last-child .fo-point{animation:none}}
 .ac-section.ac-blanc.parcours{background-position:right 3% top 24px}
+.badge-attest{display:inline-block;font-size:11.5px;font-weight:700;color:var(--feuille);background:#EEF4EA;border:1px solid #CFE0C6;border-radius:999px;padding:3px 9px;white-space:nowrap}
+.carte .attest{font-size:12.5px;font-weight:700;color:var(--feuille);margin:6px 0 0}

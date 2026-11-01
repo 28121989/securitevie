@@ -5,5 +5,5 @@ periode: "Décembre 2025"
 partenaires: "AGNDR, financement AmplifyChange"
 image: ""
 description: "Activités de sensibilisation sur les droits des femmes et la santé sexuelle et reproductive des jeunes, avec l'AGNDR, grâce au financement d'AmplifyChange."
-ordre: 3
+ordre: 5
 ---
