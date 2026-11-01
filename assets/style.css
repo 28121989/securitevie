@@ -661,3 +661,6 @@ h2{font-size:clamp(1.5rem,2.6vw,2.05rem)}
 @keyframes carteEntre{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 @media (max-width:700px){.heros.avec-diapos .bloc.diapo-carte-bloc{bottom:52px;padding:0 14px!important}.diapo-carte{padding:14px 16px}.dc-titre{font-size:16.5px}.dc-contexte{font-size:12px}}
 @media (prefers-reduced-motion:reduce){.diapo-carte.change{animation:none}}
+.dc-lien{display:inline-block;margin-top:12px;font-size:13px;font-weight:700;color:var(--prune);text-decoration:none;border-bottom:2px solid var(--terre);padding-bottom:1px}
+.dc-lien:hover{color:var(--terre)}
+@media (max-width:700px){.dc-lien{margin-top:8px;font-size:12px}}
