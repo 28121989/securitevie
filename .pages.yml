@@ -151,6 +151,15 @@ content:
           - name: image
             label: Photo
             type: image
+          - name: rubrique
+            label: Rubrique (domaine ou projet, en petit)
+            type: string
+          - name: titre
+            label: Titre (le message de la photo)
+            type: string
+          - name: contexte
+            label: Contexte (projet, partenaires, lieu, date)
+            type: string
           - name: legende
             label: Légende
             type: string

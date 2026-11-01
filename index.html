@@ -9,12 +9,17 @@ seo_titre: "ONG Sécurité Vie (OSV) – ONG humanitaire à Yamoussoukro, Côte 
 {% assign diapo = site.data.diaporama %}
 <section id="accueil" class="heros avec-diapos" aria-label="Accueil">
 <div class="diapos" aria-hidden="true">
-{% if diapo.diapos and diapo.diapos.size > 0 %}{% for d in diapo.diapos %}<div class="diapo{% if forloop.first %} active{% endif %}" style="background-image:url('{{ d.image | relative_url }}')" data-legende="{{ d.legende | escape }}"></div>
+{% if diapo.diapos and diapo.diapos.size > 0 %}{% for d in diapo.diapos %}<div class="diapo{% if forloop.first %} active{% endif %}" style="background-image:url('{{ d.image | relative_url }}')" data-legende="{{ d.legende | escape }}" data-rubrique="{{ d.rubrique | escape }}" data-titre="{{ d.titre | default: d.legende | escape }}" data-contexte="{{ d.contexte | escape }}"></div>
 {% endfor %}{% elsif infos.photo_accueil and infos.photo_accueil != "" %}<div class="diapo active" style="background-image:url('{{ infos.photo_accueil | relative_url }}')"></div>{% endif %}
 </div>
 <div class="bloc">
 <h1 class="masque">ONG Sécurité Vie – Agir pour sauver des vies au quotidien</h1>
 </div>
+{% assign d0 = diapo.diapos | first %}{% if d0 %}<div class="bloc diapo-carte-bloc"><div class="diapo-carte" aria-live="polite">
+<p class="dc-rubrique">{{ d0.rubrique }}</p>
+<p class="dc-titre">{{ d0.titre | default: d0.legende }}</p>
+<p class="dc-contexte">{{ d0.contexte }}</p>
+</div></div>{% endif %}
 <div class="diapo-bas">
 <div class="points" role="group" aria-label="Choisir une photo"></div>
 </div>
@@ -26,6 +31,9 @@ seo_titre: "ONG Sécurité Vie (OSV) – ONG humanitaire à Yamoussoukro, Côte 
   var i=0, delai={{ diapo.vitesse | default: 6 }}*1000, t;
   function voir(n){ d[i].classList.remove('active'); if(pts.children[i]) pts.children[i].setAttribute('aria-current','false');
     i=(n+d.length)%d.length; d[i].classList.add('active'); 
+    var c=document.querySelector('.diapo-carte'); if(c){ c.classList.remove('change'); void c.offsetWidth; c.classList.add('change');
+      c.querySelector('.dc-rubrique').textContent=d[i].dataset.rubrique||''; c.querySelector('.dc-titre').textContent=d[i].dataset.titre||'';
+      c.querySelector('.dc-contexte').textContent=d[i].dataset.contexte||''; }
     if(pts.children[i]) pts.children[i].setAttribute('aria-current','true'); }
   if(d.length>1){ for(var k=0;k<d.length;k++){ var b=document.createElement('button'); b.type='button'; b.setAttribute('aria-label','Photo '+(k+1));
       (function(k){ b.onclick=function(){ voir(k); relancer(); }; })(k); pts.appendChild(b); } }
