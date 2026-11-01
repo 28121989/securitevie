@@ -251,6 +251,10 @@ content:
           - name: texte
             label: Présentation courte
             type: text
+          - name: atouts
+            label: Points forts (2 ou 3)
+            type: string
+            list: true
       - name: moyens
         label: Moyens sur le terrain
         type: string

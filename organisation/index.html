@@ -10,6 +10,7 @@ description: "Gouvernance et équipe de direction de l'ONG Sécurité Vie (OSV),
 {% assign e = site.data.equipe %}
 <section class="section-page"><div class="bloc">
 <h2 class="titre-section">Notre gouvernance</h2>
+{% if site.data.infos.agrement and site.data.infos.agrement != "" %}<p class="statut-legal"><strong>Statut juridique</strong> {{ site.data.infos.agrement }}, conformément à l'ordonnance n° 2024-368 du 12 juin 2024 relative à l'organisation de la société civile.</p>{% endif %}
 <ol class="gouv">
 {% for g in e.gouvernance %}<li><h3>{{ g.titre }}</h3><p>{{ g.texte }}</p></li>
 {% endfor %}</ol>
@@ -24,6 +25,7 @@ description: "Gouvernance et équipe de direction de l'ONG Sécurité Vie (OSV),
 <strong class="eq-nom">{{ x.nom }}</strong><span class="eq-fonction">{{ x.fonction }}</span>
 {% if x.annees and x.annees != "" %}<span class="ex-annees">{{ x.annees }} d'expérience</span>{% endif %}
 <span class="ex-texte">{{ x.texte }}</span>
+{% if x.atouts and x.atouts.size > 0 %}<ul class="eq-atouts">{% for a in x.atouts %}<li>{{ a }}</li>{% endfor %}</ul>{% endif %}
 </li>{% endfor %}</ul>{% endfor %}
 </div></section>
 {% if e.moyens and e.moyens.size > 0 %}

@@ -20,58 +20,93 @@ membres:
   statut: Direction
   annees: 10 ans
   photo: /images/equipe/kean-dion-anselme.jpg
-  texte: Master en suivi-évaluation des projets et programmes. Coordination régionale de programmes genre et autonomisation, supervision technique de programmes de santé communautaire, chef de mission sur chantiers routiers depuis 2022.
+  texte: Master en suivi-évaluation des projets et programmes (ISC, 2020). Environ 10 ans dans la coordination de programmes de santé sexuelle et reproductive, de genre et d'autonomisation.
+  atouts:
+  - 'Coordination régionale SWEDD Genre : 90 espaces sûrs, 2 700 adolescentes et jeunes femmes, 150 agents communautaires'
+  - 'Supervision technique d''un programme paludisme (Save the Children) : 75 agents de santé communautaire'
+  - Chef de mission sur chantiers routiers depuis 2022
 - nom: KELY Céba Thimothée
   fonction: Directeur des programmes
   statut: Direction
   annees: ''
   photo: ''
   texte: Pilote la conception, la mise en œuvre et le suivi des projets de l'ONG.
+  atouts: []
 - nom: Dr ASSAMOUA Indé Nicolas
   fonction: Chef de mission
   statut: Équipe OSV
   annees: 25 ans et plus
   photo: /images/equipe/assamoua-inde-nicolas.jpg
-  texte: Docteur en médecine. Plus de 10 ans à la direction de programmes VIH et de renforcement du système de santé (EGPAF). Chef de projet pour OSV depuis 2024.
+  texte: Docteur en médecine (1999), plus de 25 ans d'expérience dont plus de 10 ans à la direction de programmes VIH au sein d'une organisation internationale.
+  atouts:
+  - Directeur associé, renforcement du système de santé (EGPAF), depuis 2022
+  - Directeur de projet soins et traitement VIH (projet Djasso, EGPAF)
+  - Chef de projet sensibilisation et sauvegarde sociale pour OSV depuis 2024
 - nom: Dr LEH Bi Zanhan Guy-Marcel
   fonction: Sociologue, spécialiste genre et VBG
   statut: Équipe OSV
   annees: 6 ans et plus
   photo: /images/equipe/leh-bi-zanhan-guy-marcel.jpg
-  texte: Doctorat en sociologie. Enquêtes de base et évaluations pour des partenaires internationaux. Spécialiste VBG et genre à OSV depuis 2023.
+  texte: Docteur en sociologie (2023), spécialiste genre, VBG, vulnérabilités et santé sexuelle et reproductive. Spécialiste VBG et genre d'OSV depuis novembre 2023.
+  atouts:
+  - Enquêtes et évaluations pour Save the Children, FHI 360, USAID et AVSI
+  - Coordination d'un projet VIH/sida dans la région du Bélier
+  - Publications sur le harcèlement sexuel au travail et les mutilations génitales féminines
 - nom: ZADI Guie Landry
   fonction: Chargé de communication
   statut: Équipe OSV
   annees: 5 ans et plus
   photo: /images/equipe/zadi-guie-landry.jpg
-  texte: Master 2 en communication et développement. Communication sur 7 projets de sensibilisation. Chargé de communication d'OSV depuis 2024.
+  texte: Master 2 de recherche en communication et développement (mention très bien), doctorat en instance de soutenance. Chargé de communication d'OSV depuis 2024.
+  atouts:
+  - Plus de 5 ans en communication institutionnelle et relations médias
+  - Supports de sensibilisation, vidéo et contenus numériques
+  - Communication sur 7 projets de sensibilisation sur chantiers
 - nom: Dr KOUAKOU Ahou Albertine
   fonction: Genre, VBG et appui psychosocial
   statut: Experts associés
   annees: 10 ans et plus
   photo: /images/equipe/kouakou-ahou-albertine.jpg
-  texte: Doctorat en psychologie. Formation de prestataires de santé, d'agents, d'enseignants et de journalistes sur la prise en charge psychosociale des VBG.
+  texte: Docteure en psychologie (2023), enseignante-chercheure et formatrice en genre, VBG, santé sexuelle et reproductive et santé mentale. Plus de 10 ans d'expérience.
+  atouts:
+  - Chargée de programme genre et VBG à l'IRC (projets FLASH et SWEDD)
+  - Formation des prestataires de santé des districts de Yopougon sur la prise en charge psychosociale des VBG
+  - Recherche pour l'UNICEF et le ministère de l'Éducation nationale
 - nom: YAO N'Guessan Christian
   fonction: Spécialiste en sécurité routière
   statut: Experts associés
   annees: 10 ans et plus
   photo: /images/equipe/yao-nguessan-christian.jpg
-  texte: Certifié par l'OSER, ancien directeur d'exploitation d'auto-école. Animation de 6 projets de sensibilisation à la sécurité routière sur chantiers.
+  texte: Certifié CAPP par l'Office de sécurité routière (OSER, 2014), plus de 10 ans dans l'enseignement de la conduite et la direction d'auto-école.
+  atouts:
+  - Animation de 6 projets de sensibilisation à la sécurité routière sur chantiers
+  - Usage de la voie pendant les travaux, signalisation, comportements à risque
 - nom: MOUSSO Nado Benjamin
   fonction: Assistant social
   statut: Experts associés
   annees: 4 ans et plus
   photo: /images/equipe/mousso-nado-benjamin.jpg
-  texte: Diplôme d'État d'assistant social. Dépistage, soutien psychologique et orientation des survivantes de VBG.
+  texte: Diplôme d'État d'assistant social (INFS, 2011), plus de 4 ans dans des projets VIH/sida.
+  atouts:
+  - Dépistage, index testing et PrEP (projet REACH, IRC)
+  - Soutien psychologique et orientation des survivantes de VBG avec le Centre social
 - nom: KOFFI Yao Olivier
   fonction: Environnement et HSE
   statut: Experts associés
   annees: 7 ans et plus
   photo: /images/equipe/koffi-yao-olivier.jpg
-  texte: Master 2 en développement durable, expert QHSE. Environnementaliste de mission de maîtrise d'œuvre routière, PGES et quarts d'heure sécurité.
+  texte: Master 2 en développement durable (Chaire UNESCO), expert QHSE (2022) et sociologue. Environnementaliste de chantiers routiers depuis 2019.
+  atouts:
+  - PGES-HSS et étude d'impact de la route Korhogo–Sirasso–Dianra (108 km), depuis 2021
+  - HSE sur près de 190 km de reprofilage de routes et pistes dans le nord-ouest
+  - Animation de quarts d'heure sécurité
 - nom: ZOH Gogbe Eliezer
   fonction: Ouvrages hydrauliques et conduite de travaux
   statut: Experts associés
   annees: 6 ans et plus
   photo: /images/equipe/zoh-gogbe-eliezer.jpg
-  texte: BTS génie civil. Supervision d'ouvrages d'assainissement, animation de 2 projets de sensibilisation à la sécurité routière.
+  texte: BTS en génie civil, option bâtiment. Conduite de travaux et conception de plans 2D et 3D depuis 2020.
+  atouts:
+  - Supervision d'ouvrages d'assainissement depuis 2023
+  - Animation de 2 projets de sensibilisation à la sécurité routière avec OSV
+  - Prise de vue par drone et montage vidéo
