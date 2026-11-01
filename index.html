@@ -84,7 +84,6 @@ seo_titre: "ONG Sécurité Vie (OSV) – ONG humanitaire à Yamoussoukro, Côte 
 <p class="surtitre">Nos zones d'intervention</p>
 <h2 id="t-zones">Au plus près des communautés</h2>
 <p>{{ z.intro }}</p>
-<ul class="ac-lieux">{% for l in z.lieux %}<li><strong>{{ l.nom }}</strong><span>{{ l.type }}</span></li>{% endfor %}</ul>
 <a class="lien-fleche lien-clair" href="{{ '/zones-intervention/' | relative_url }}">Lire plus →</a>
 </div>
 {% include carte-zones.html %}

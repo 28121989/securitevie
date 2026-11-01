@@ -1,26 +1,36 @@
-intro: "Basée à Yamoussoukro, l'ONG Sécurité Vie intervient au plus près des communautés grâce à ses bureaux techniques dans le centre et le nord de la Côte d'Ivoire."
-lieux:
-  - nom: "Yamoussoukro"
-    type: "Siège"
-    lat: 6.8276
-    lng: -5.2893
-  - nom: "Korhogo"
-    type: "Bureau technique"
-    lat: 9.4580
-    lng: -5.6296
-  - nom: "Dabakala"
-    type: "Bureau technique"
-    lat: 8.3633
-    lng: -4.4333
-  - nom: "Kong"
-    type: "Bureau technique"
-    lat: 9.1510
-    lng: -4.6100
-  - nom: "Touba"
-    type: "Bureau technique"
-    lat: 8.2833
-    lng: -7.6833
-  - nom: "Katiola"
-    type: "Zone d'intervention"
-    lat: 8.1333
-    lng: -5.1000
+intro: "Basée à Yamoussoukro, l'ONG Sécurité Vie intervient par région, au plus près des communautés, grâce à ses bureaux techniques dans le centre et le nord de la Côte d'Ivoire."
+# Régions colorées sur la carte. "cle" doit correspondre à une région de la carte :
+# abidjan, yamoussoukro, agneby-tiassa, bafing, bagoue, belier, bere, bounkani, cavally, folon, gbeke, gbokle, goh,
+# gontougo, grands-ponts, guemon, hambol, haut-sassandra, iffou, indenie-djuablin, kabadougou, loh-djiboua, marahoue,
+# me, moronou, n-zi, nawa, poro, san-pedro, sud-comoe, tchologo, tonkpi, worodougou
+regions:
+  - nom: "District autonome de Yamoussoukro"
+    cle: "yamoussoukro"
+    couleur: "#5E2D86"
+    role: "Siège"
+    villes: "Yamoussoukro"
+  - nom: "Région du Poro"
+    cle: "poro"
+    couleur: "#A9632A"
+    role: "Bureau technique"
+    villes: "Korhogo"
+  - nom: "Région du Tchologo"
+    cle: "tchologo"
+    couleur: "#E0AE1E"
+    role: "Bureau technique et projets"
+    villes: "Kong, Bilimono, Nafana, Sikolo"
+  - nom: "Région du Hambol"
+    cle: "hambol"
+    couleur: "#3E6E2B"
+    role: "Bureau technique et projets"
+    villes: "Dabakala, Katiola"
+  - nom: "Région du Bafing"
+    cle: "bafing"
+    couleur: "#2C7FB8"
+    role: "Bureau technique"
+    villes: "Touba"
+  - nom: "District autonome d'Abidjan"
+    cle: "abidjan"
+    couleur: "#2D2640"
+    role: "Projet réalisé"
+    villes: "Anyama"

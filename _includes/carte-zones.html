@@ -1,22 +1,6 @@
 {% assign z = site.data.zones %}
-<div class="carte-zones">
-<div id="carte-osv" class="carte-osv" role="img" aria-label="Carte des implantations de l'ONG Sécurité Vie en Côte d'Ivoire"></div>
-</div>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script>
-(function(){
-  if(!window.L) return;
-  var lieux={{ z.lieux | jsonify }};
-  var carte=L.map('carte-osv',{scrollWheelZoom:false}).setView([7.6,-5.5],6);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:12,attribution:'&copy; OpenStreetMap'}).addTo(carte);
-  var pts=[];
-  lieux.forEach(function(l){
-    var siege=l.type==='Siège';
-    var m=L.circleMarker([l.lat,l.lng],{radius:siege?11:8,color:'#fff',weight:2,fillColor:siege?'#5E2D86':(l.type==='Bureau technique'?'#A9632A':'#3E6E2B'),fillOpacity:1}).addTo(carte);
-    m.bindTooltip('<strong>'+l.nom+'</strong><br>'+l.type);
-    pts.push([l.lat,l.lng]);
-  });
-  if(pts.length) carte.fitBounds(pts,{padding:[30,30]});
-})();
-</script>
+<figure class="carte-ci">
+<style>{% for r in z.regions %}.carte-ci #r-{{ r.cle }}{fill:{{ r.couleur }};stroke:#fff;stroke-width:1.4}.carte-ci #l-{{ r.cle }}{display:block}{% endfor %}</style>
+{% include carte-ci.svg %}
+<figcaption><ul class="carte-ci-legende">{% for r in z.regions %}<li><span class="cc-pastille" style="background:{{ r.couleur }}"></span><span><strong>{{ r.nom }}</strong><small>{{ r.role }}{% if r.villes and r.villes != "" %} · {{ r.villes }}{% endif %}</small></span></li>{% endfor %}</ul></figcaption>
+</figure>

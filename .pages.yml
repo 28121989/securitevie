@@ -267,23 +267,26 @@ content:
       - name: intro
         label: Texte de présentation
         type: text
-      - name: lieux
-        label: Lieux sur la carte
+      - name: regions
+        label: Régions colorées sur la carte
         type: object
         list: true
         fields:
           - name: nom
-            label: Ville
+            label: Nom affiché (ex. Région du Poro)
             type: string
-          - name: type
-            label: Type (Siège, Bureau technique ou Zone d'intervention)
+          - name: cle
+            label: Code de la région sur la carte (voir la liste en tête du fichier zones.yml, ex. poro, hambol, abidjan)
             type: string
-          - name: lat
-            label: Latitude
-            type: number
-          - name: lng
-            label: Longitude
-            type: number
+          - name: couleur
+            label: Couleur (code OSV ex. #5E2D86 prune, #3E6E2B vert, #E0AE1E jaune, #A9632A terre, #2C7FB8 bleu)
+            type: string
+          - name: role
+            label: Rôle (Siège, Bureau technique, Projets…)
+            type: string
+          - name: villes
+            label: Villes ou localités
+            type: string
   - name: videos
     label: Galerie vidéos
     type: file

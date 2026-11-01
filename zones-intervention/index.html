@@ -5,14 +5,12 @@ rubrique: "Présentation"
 bandeau: true
 intro: "Un siège à Yamoussoukro et des bureaux techniques dans le centre et le nord du pays."
 seo_titre: "Zones d'intervention en Côte d'Ivoire"
-description: "Zones d'intervention de l'ONG Sécurité Vie : siège à Yamoussoukro, bureaux techniques à Korhogo, Dabakala, Kong et Touba."
+description: "Régions d'intervention de l'ONG Sécurité Vie : District de Yamoussoukro (siège), Poro, Tchologo, Hambol, Bafing et District d'Abidjan."
 ---
 {% assign z = site.data.zones %}
 <section class="section-page"><div class="bloc ac-zones zones-page">
 <div class="ac-zones-texte">
 <p>{{ z.intro }}</p>
-<ul class="ac-lieux ac-lieux-sombre">{% for l in z.lieux %}<li><strong>{{ l.nom }}</strong><span>{{ l.type }}</span></li>{% endfor %}</ul>
-<p class="legende-carte"><span class="pastille p-siege"></span>Siège <span class="pastille p-bureau"></span>Bureau technique <span class="pastille p-zone"></span>Zone d'intervention</p>
 </div>
 {% include carte-zones.html %}
 </div></section>

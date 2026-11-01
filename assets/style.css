@@ -726,3 +726,15 @@ h2{font-size:clamp(1.5rem,2.6vw,2.05rem)}
 .dc-lien:hover{color:#F4D98B}
 @media (max-width:700px){.dc-titre{font-size:18px}.diapo-carte{padding-left:14px}.heros.avec-diapos .diapos::after{height:70%}}
 @media (max-width:700px){.heros.avec-diapos .bloc.diapo-carte-bloc{bottom:78px}}
+/* Carte des régions (fond blanc, régions d'intervention colorées) */
+.carte-ci{margin:0;background:#fff;border-radius:16px;padding:22px 22px 18px;box-shadow:0 10px 30px rgba(30,24,48,.10);border:1px solid var(--trait)}
+.carte-ci-svg{display:block;width:100%;height:auto;max-height:440px}
+.carte-ci .rg{fill:#fff;stroke:#BDB3C9;stroke-width:1;stroke-linejoin:round;transition:opacity .2s}
+.carte-ci .rg:hover{opacity:.82}
+.carte-ci .lb{display:none;font:700 15px Arial,sans-serif;fill:#2D2640;text-anchor:middle;paint-order:stroke;stroke:#fff;stroke-width:3px;stroke-linejoin:round;pointer-events:none}
+.carte-ci-legende{list-style:none;margin:16px 0 0;padding:14px 0 0;border-top:1px dashed var(--trait);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 18px}
+.carte-ci-legende li{display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.35;color:#2D2640}
+.carte-ci-legende strong{display:block;font-size:13px}
+.carte-ci-legende small{display:block;font-size:12px;color:#6b6478}
+.cc-pastille{flex:none;width:14px;height:14px;border-radius:4px;margin-top:2px}
+@media (max-width:520px){.carte-ci{padding:14px}.carte-ci-legende{grid-template-columns:1fr}}
