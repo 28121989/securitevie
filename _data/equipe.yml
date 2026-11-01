@@ -1,53 +1,77 @@
-# Équipe de direction (à compléter ou corriger dans l'espace d'administration)
+# Organisation : gouvernance, équipe (avec l'accord des personnes) et moyens — modifiable dans Pages CMS
 gouvernance:
-  - titre: "Conseil d'administration"
-    texte: "Présidé par le Président du Conseil d'administration (PCA), il définit les grandes orientations de l'ONG et contrôle leur mise en œuvre."
-  - titre: "Direction exécutive"
-    texte: "Elle conduit la stratégie, la mobilisation des ressources et les relations avec les partenaires."
-  - titre: "Direction des programmes"
-    texte: "Elle pilote la conception, la mise en œuvre, le suivi et l'évaluation des projets sur le terrain."
-  - titre: "Bureaux techniques"
-    texte: "Ils mettent en œuvre les activités au plus près des communautés, en lien avec les autorités locales."
-equipe:
-  - nom: "KEAN DION Anselme"
-    fonction: "Directeur exécutif"
-    photo: ""
-  - nom: "KELY Céba Thimothée"
-    fonction: "Directeur des programmes"
-    photo: ""
-
-# Pool d'experts mobilisables (présentés par profil ; noms publiés seulement avec l'accord écrit de chacun)
-capacites: "OSV s'appuie sur une équipe pluridisciplinaire : spécialistes en suivi-évaluation, experts en santé communautaire, sociologues, spécialistes HSE, communicateurs, spécialistes en sécurité routière et intervenants communautaires. Elle mobilise rapidement des relais locaux et connaît bien les réalités communautaires de la Côte d'Ivoire."
-experts:
-  - profil: "Médecin, chef de mission"
-    annees: "25 ans et plus"
-    texte: "Docteur en médecine ; plus de 10 ans à la direction de programmes VIH et de renforcement du système de santé (EGPAF)."
-  - profil: "Spécialiste en suivi-évaluation, superviseur général"
-    annees: "10 ans"
-    texte: "Master en suivi-évaluation ; coordination régionale de programmes genre et autonomisation, supervision de programmes de santé communautaire."
-  - profil: "Sociologue, spécialiste genre et VBG"
-    annees: "6 ans et plus"
-    texte: "Doctorat en sociologie ; enquêtes de base et évaluations pour des partenaires internationaux."
-  - profil: "Psychologue, genre et appui psychosocial"
-    annees: "10 ans et plus"
-    texte: "Doctorat en psychologie ; formation de prestataires de santé et d'agents sur la prise en charge psychosociale des VBG."
-  - profil: "Assistant social"
-    annees: "4 ans et plus"
-    texte: "Diplôme d'État d'assistant social ; dépistage, soutien psychologique et orientation des survivantes de VBG."
-  - profil: "Spécialiste en sécurité routière"
-    annees: "10 ans et plus"
-    texte: "Certifié par l'OSER ; animation de 6 projets de sensibilisation à la sécurité routière sur des chantiers routiers."
-  - profil: "Spécialiste en communication"
-    annees: "5 ans et plus"
-    texte: "Master 2 en communication et développement ; supports en langues locales, spots radio et vidéo."
-  - profil: "Environnement et HSE"
-    annees: "Depuis 2019"
-    texte: "Master 2 en développement durable, expert QHSE ; PGES, rapports environnementaux et sociaux, quarts d'heure sécurité."
-  - profil: "Génie civil, ouvrages hydrauliques"
-    annees: "Depuis 2020"
-    texte: "BTS génie civil ; conduite de travaux et supervision d'ouvrages d'assainissement."
+- titre: Conseil d'administration
+  texte: Présidé par le Président du Conseil d'administration (PCA), il définit les grandes orientations de l'ONG et contrôle leur mise en œuvre.
+- titre: Direction exécutive
+  texte: Elle conduit la stratégie, la mobilisation des ressources et les relations avec les partenaires.
+- titre: Direction des programmes
+  texte: Elle pilote la conception, la mise en œuvre, le suivi et l'évaluation des projets sur le terrain.
+- titre: Bureaux techniques
+  texte: Ils mettent en œuvre les activités au plus près des communautés, en lien avec les autorités locales.
+capacites: 'OSV s''appuie sur une équipe pluridisciplinaire : spécialistes en suivi-évaluation, experts en santé communautaire, sociologues, spécialistes HSE, communicateurs, spécialistes en sécurité routière et intervenants communautaires. Elle mobilise rapidement des relais locaux et connaît bien les réalités communautaires de la Côte d''Ivoire.'
 moyens:
-  - "1 véhicule et 2 motos pour les déplacements sur le terrain"
-  - "1 vidéoprojecteur, 3 ordinateurs et 2 imprimantes"
-  - "2 appareils photo numériques et 2 mégaphones"
-  - "Collecte des données sur tablette ou téléphone (KoboToolbox)"
+- 1 véhicule et 2 motos pour les déplacements sur le terrain
+- 1 vidéoprojecteur, 3 ordinateurs et 2 imprimantes
+- 2 appareils photo numériques et 2 mégaphones
+- Collecte des données sur tablette ou téléphone (KoboToolbox)
+membres:
+- nom: KEAN Dion Anselme
+  fonction: Directeur exécutif
+  statut: Direction
+  annees: 10 ans
+  photo: /images/equipe/kean-dion-anselme.jpg
+  texte: Master en suivi-évaluation des projets et programmes. Coordination régionale de programmes genre et autonomisation, supervision technique de programmes de santé communautaire, chef de mission sur chantiers routiers depuis 2022.
+- nom: KELY Céba Thimothée
+  fonction: Directeur des programmes
+  statut: Direction
+  annees: ''
+  photo: ''
+  texte: Pilote la conception, la mise en œuvre et le suivi des projets de l'ONG.
+- nom: Dr ASSAMOUA Indé Nicolas
+  fonction: Chef de mission
+  statut: Équipe OSV
+  annees: 25 ans et plus
+  photo: /images/equipe/assamoua-inde-nicolas.jpg
+  texte: Docteur en médecine. Plus de 10 ans à la direction de programmes VIH et de renforcement du système de santé (EGPAF). Chef de projet pour OSV depuis 2024.
+- nom: Dr LEH Bi Zanhan Guy-Marcel
+  fonction: Sociologue, spécialiste genre et VBG
+  statut: Équipe OSV
+  annees: 6 ans et plus
+  photo: /images/equipe/leh-bi-zanhan-guy-marcel.jpg
+  texte: Doctorat en sociologie. Enquêtes de base et évaluations pour des partenaires internationaux. Spécialiste VBG et genre à OSV depuis 2023.
+- nom: ZADI Guie Landry
+  fonction: Chargé de communication
+  statut: Équipe OSV
+  annees: 5 ans et plus
+  photo: /images/equipe/zadi-guie-landry.jpg
+  texte: Master 2 en communication et développement. Communication sur 7 projets de sensibilisation. Chargé de communication d'OSV depuis 2024.
+- nom: Dr KOUAKOU Ahou Albertine
+  fonction: Genre, VBG et appui psychosocial
+  statut: Experts associés
+  annees: 10 ans et plus
+  photo: /images/equipe/kouakou-ahou-albertine.jpg
+  texte: Doctorat en psychologie. Formation de prestataires de santé, d'agents, d'enseignants et de journalistes sur la prise en charge psychosociale des VBG.
+- nom: YAO N'Guessan Christian
+  fonction: Spécialiste en sécurité routière
+  statut: Experts associés
+  annees: 10 ans et plus
+  photo: /images/equipe/yao-nguessan-christian.jpg
+  texte: Certifié par l'OSER, ancien directeur d'exploitation d'auto-école. Animation de 6 projets de sensibilisation à la sécurité routière sur chantiers.
+- nom: MOUSSO Nado Benjamin
+  fonction: Assistant social
+  statut: Experts associés
+  annees: 4 ans et plus
+  photo: /images/equipe/mousso-nado-benjamin.jpg
+  texte: Diplôme d'État d'assistant social. Dépistage, soutien psychologique et orientation des survivantes de VBG.
+- nom: KOFFI Yao Olivier
+  fonction: Environnement et HSE
+  statut: Experts associés
+  annees: 7 ans et plus
+  photo: /images/equipe/koffi-yao-olivier.jpg
+  texte: Master 2 en développement durable, expert QHSE. Environnementaliste de mission de maîtrise d'œuvre routière, PGES et quarts d'heure sécurité.
+- nom: ZOH Gogbe Eliezer
+  fonction: Ouvrages hydrauliques et conduite de travaux
+  statut: Experts associés
+  annees: 6 ans et plus
+  photo: /images/equipe/zoh-gogbe-eliezer.jpg
+  texte: BTS génie civil. Supervision d'ouvrages d'assainissement, animation de 2 projets de sensibilisation à la sécurité routière.

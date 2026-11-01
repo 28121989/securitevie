@@ -695,3 +695,17 @@ h2{font-size:clamp(1.5rem,2.6vw,2.05rem)}
 .moyens{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
 .moyens li{position:relative;padding:12px 14px 12px 38px;background:var(--sable);border-radius:10px;font-size:14px}
 .moyens li::before{content:"";position:absolute;left:14px;top:17px;width:10px;height:10px;border-radius:50%;border:2px dashed var(--terre)}
+
+/* ===== Notre équipe : cartes avec portrait ===== */
+.eq-groupe{display:flex;align-items:center;gap:12px;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--terre);margin:34px 0 16px}
+.eq-groupe::after{content:"";flex:1;border-top:2px dashed var(--trait)}
+.eq-cartes{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px}
+.eq-carte{background:#fff;border:1px solid var(--trait);border-radius:16px;padding:24px 20px 20px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px;box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 2px 4px rgba(45,38,64,.05),0 12px 26px rgba(45,38,64,.07);transition:transform .2s,box-shadow .2s}
+.eq-carte:hover{transform:translateY(-3px);box-shadow:0 16px 32px rgba(45,38,64,.12)}
+.eq-photo{width:112px;height:112px;border-radius:50%;object-fit:cover;object-position:center 20%;border:4px solid #fff;box-shadow:0 0 0 2px var(--c,var(--prune)),0 8px 18px rgba(45,38,64,.15);margin-bottom:8px}
+.eq-initiales{display:flex;align-items:center;justify-content:center;background:var(--clair);color:var(--prune);font-size:38px;font-weight:700}
+.eq-cartes li:nth-child(5n+1){--c:var(--prune)}.eq-cartes li:nth-child(5n+2){--c:var(--feuille)}.eq-cartes li:nth-child(5n+3){--c:var(--soleil)}.eq-cartes li:nth-child(5n+4){--c:var(--terre)}.eq-cartes li:nth-child(5n+5){--c:var(--eau)}
+.eq-nom{font-size:15.5px;color:var(--vert);line-height:1.25}
+.eq-fonction{font-size:13px;font-weight:700;color:var(--prune)}
+.eq-carte .ex-annees{align-self:center;margin:4px 0}
+.eq-carte .ex-texte{text-align:center}

@@ -213,7 +213,7 @@ content:
     path: _data/equipe.yml
     fields:
       - name: gouvernance
-        label: Organes de gouvernance
+        label: Gouvernance
         type: object
         list: true
         fields:
@@ -223,8 +223,11 @@ content:
           - name: texte
             label: Rôle
             type: text
-      - name: equipe
-        label: Équipe de direction
+      - name: capacites
+        label: Texte sur les capacités de l'équipe
+        type: text
+      - name: membres
+        label: Membres de l'équipe (avec leur accord)
         type: object
         list: true
         fields:
@@ -234,25 +237,19 @@ content:
           - name: fonction
             label: Fonction
             type: string
-          - name: photo
-            label: Photo
-            type: image
-      - name: capacites
-        label: Texte sur les capacités de l'équipe
-        type: text
-      - name: experts
-        label: Pool d'experts (par profil)
-        type: object
-        list: true
-        fields:
-          - name: profil
-            label: Profil
-            type: string
+          - name: statut
+            label: Groupe
+            type: select
+            options:
+              values: ["Direction", "Équipe OSV", "Experts associés"]
           - name: annees
             label: Expérience (ex. 10 ans et plus)
             type: string
+          - name: photo
+            label: Portrait (carré)
+            type: image
           - name: texte
-            label: Texte court
+            label: Présentation courte
             type: text
       - name: moyens
         label: Moyens sur le terrain

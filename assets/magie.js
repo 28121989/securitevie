@@ -3,7 +3,7 @@
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   if (!('IntersectionObserver' in window)) return;
   var d = document.documentElement;
-  var cibles = document.querySelectorAll('.experts li, .frise-osv li, .ac-entete, .ac-chiffres li, .ac-domaines li, .ac-carte, .carte, .dg-carte, .dp-pilier, .vm-mission, .vm-vision, .titre-section, .portefeuille, .dp-affiche');
+  var cibles = document.querySelectorAll('.eq-carte, .experts li, .frise-osv li, .ac-entete, .ac-chiffres li, .ac-domaines li, .ac-carte, .carte, .dg-carte, .dp-pilier, .vm-mission, .vm-vision, .titre-section, .portefeuille, .dp-affiche');
   var hauteur = window.innerHeight;
   cibles.forEach(function(el, i){
     if (el.getBoundingClientRect().top < hauteur * 0.92) return; /* déjà visible : on ne touche à rien */
