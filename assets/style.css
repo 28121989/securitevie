@@ -738,3 +738,4 @@ h2{font-size:clamp(1.5rem,2.6vw,2.05rem)}
 .carte-ci-legende small{display:block;font-size:12px;color:#6b6478}
 .cc-pastille{flex:none;width:14px;height:14px;border-radius:4px;margin-top:2px}
 @media (max-width:520px){.carte-ci{padding:14px}.carte-ci-legende{grid-template-columns:1fr}}
+.carte-ci .contour{fill:none;stroke:#111;stroke-width:2;stroke-linejoin:round;pointer-events:none}
