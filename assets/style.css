@@ -617,7 +617,7 @@ h2{font-size:clamp(1.5rem,2.6vw,2.05rem)}
 .pied::before{top:auto;bottom:0;height:5px}
 .pied>*{position:relative;z-index:1}
 /* 5. Objets décoratifs en pointillés dans les sections claires */
-.ac-section.ac-blanc{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='92' fill='none' stroke='%235E2D86' stroke-opacity='.22' stroke-width='2' stroke-dasharray='7 9'/%3E%3Ccircle cx='100' cy='100' r='62' fill='none' stroke='%23A9632A' stroke-opacity='.22' stroke-width='2.5' stroke-dasharray='1 8' stroke-linecap='round'/%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cg stroke='%23A9632A' stroke-opacity='.28' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M20 14v12M14 20h12'/%3E%3Cpath d='M80 54v12M74 60h12'/%3E%3Cpath d='M40 94v12M34 100h12'/%3E%3C/g%3E%3C/svg%3E");background-repeat:no-repeat,no-repeat;background-size:230px 230px,120px 120px;background-position:left -120px top -50px,right 4% bottom 30px}
+.ac-section.ac-blanc{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cg stroke='%23A9632A' stroke-opacity='.28' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M20 14v12M14 20h12'/%3E%3Cpath d='M80 54v12M74 60h12'/%3E%3Cpath d='M40 94v12M34 100h12'/%3E%3C/g%3E%3C/svg%3E");background-repeat:no-repeat;background-size:120px 120px;background-position:right 4% bottom 30px}
 .ac-section:not(.ac-blanc):not(.ac-bleu){background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cg stroke='%23A9632A' stroke-opacity='.28' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M20 14v12M14 20h12'/%3E%3Cpath d='M80 54v12M74 60h12'/%3E%3Cpath d='M40 94v12M34 100h12'/%3E%3C/g%3E%3C/svg%3E");background-repeat:no-repeat;background-size:110px 110px;background-position:right 6% top 34px}
 .ac-entete h2::after,.titre-section::after{content:"";display:block;width:150px;height:22px;margin-top:8px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 40'%3E%3Cpath d='M2,20 C32,2 58,2 88,20 S148,38 178,20 S228,4 238,14' fill='none' stroke='%233E6E2B' stroke-opacity='.35' stroke-width='2.5' stroke-dasharray='1 7' stroke-linecap='round'/%3E%3C/svg%3E") left center/contain no-repeat}
 /* 6. Reliefs : cartes et chiffres légèrement en volume */
@@ -628,3 +628,23 @@ h2{font-size:clamp(1.5rem,2.6vw,2.05rem)}
 .dp-affiche::before{content:"";position:absolute;inset:22px -22px -22px 22px;z-index:-1;border-radius:16px;background-image:radial-gradient(rgba(169,99,42,.35) 1.6px,transparent 1.8px);background-size:14px 14px}
 .dp-affiche img{position:relative;border-radius:14px;box-shadow:0 14px 30px rgba(45,38,64,.14)}
 @media (max-width:700px){.ac-bleu::before,.ac-bleu::after{height:30px}.heros.avec-diapos::after{height:30px}.pied::after{height:34px}.dp-affiche::before{inset:12px -10px -12px 10px}}
+
+/* ===== Touche finale ===== */
+/* apparition douce des blocs au défilement */
+.apparait{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.apparait.vu{opacity:1;transform:none}
+/* reflet lumineux qui traverse le ruban de couleurs */
+.entete::before{content:"";position:absolute;left:0;right:0;bottom:-1px;height:4px;z-index:2;pointer-events:none;background:linear-gradient(90deg,transparent 0,rgba(255,255,255,.85) 50%,transparent 100%) no-repeat;background-size:18% 100%;animation:reflet 7s ease-in-out infinite}
+@keyframes reflet{0%{background-position:-20% 0}55%,100%{background-position:120% 0}}
+/* anneaux pointillés qui tournent très lentement */
+.ac-section.ac-blanc::before{content:"";position:absolute;left:-120px;top:-50px;width:230px;height:230px;border-radius:50%;border:2px dashed rgba(94,45,134,.16);animation:tourne 60s linear infinite;pointer-events:none}
+@keyframes tourne{to{transform:rotate(360deg)}}
+/* points du diaporama et boutons : petit éclat au survol */
+.bouton{position:relative;overflow:hidden}
+.bouton::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-18deg);transition:left .6s ease}
+.bouton:hover::after{left:120%}
+/* images : léger zoom au survol */
+.ac-domaines li img,.ac-carte img,.carte img{transition:transform .5s ease}
+.ac-domaines li a:hover img,.ac-carte:hover img,.carte:hover img{transform:scale(1.04)}
+.ac-domaines li a{display:block;overflow:hidden;border-radius:14px}
+@media (prefers-reduced-motion:reduce){.apparait{opacity:1;transform:none;transition:none}.entete::before,.ac-section.ac-blanc::before{animation:none}.bouton::after{display:none}}
