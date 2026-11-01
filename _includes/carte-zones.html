@@ -13,7 +13,7 @@
   var pts=[];
   lieux.forEach(function(l){
     var siege=l.type==='Siège';
-    var m=L.circleMarker([l.lat,l.lng],{radius:siege?11:8,color:'#fff',weight:2,fillColor:siege?'#10263F':(l.type==='Bureau technique'?'#3F6A78':'#7C9BB8'),fillOpacity:1}).addTo(carte);
+    var m=L.circleMarker([l.lat,l.lng],{radius:siege?11:8,color:'#fff',weight:2,fillColor:siege?'#5E2D86':(l.type==='Bureau technique'?'#A9632A':'#3E6E2B'),fillOpacity:1}).addTo(carte);
     m.bindTooltip('<strong>'+l.nom+'</strong><br>'+l.type);
     pts.push([l.lat,l.lng]);
   });

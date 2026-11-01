@@ -1,7 +1,7 @@
-:root{--vert:#1B3A5C;--vert-fonce:#10263F;--accent:#7C9BB8;--accent-fonce:#5A7C9C;--violet:#3F6A78;--sable:#F7F8FA;--trait:#E1E6EC;--texte:#1F2833;--clair:#E3EAF1;--or:#B7CBDD}
+:root{--vert:#2D2640;--vert-fonce:#1E1830;--accent:#4C7F35;--accent-fonce:#3A6328;--violet:#9A5428;--sable:#FAF8F4;--trait:#E8E2D8;--texte:#262A33;--clair:#F1EAF5;--or:#E8C66A;--prune:#5E2D86;--feuille:#3E6E2B;--soleil:#E0AE1E;--terre:#A9632A;--eau:#2C7FB8}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial, Helvetica, sans-serif;color:var(--texte);background:var(--sable);font-size:15px;line-height:1.6}
+body{margin:0;font-family:Arial, Helvetica, sans-serif;color:var(--texte);background:var(--sable);font-size:14.5px;line-height:1.7}
 a{color:var(--vert)}a:hover{color:var(--vert-fonce)}
 img{max-width:100%;display:block}
 .bloc{max-width:1200px;margin:0 auto;padding:88px 24px}
@@ -436,7 +436,7 @@ h1,h2,.marque-nom,.vm-titre,.form-titre,.dom-titre-long,.titre-contact{font-weig
 .zones-page .carte-osv{border-color:var(--trait)}
 .legende-carte{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;font-size:13px}
 .pastille{display:inline-block;width:12px;height:12px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px #9aa}
-.p-siege{background:#10263F}.p-bureau{background:#3F6A78}.p-zone{background:#7C9BB8}
+.p-siege{background:#5E2D86}.p-bureau{background:#A9632A}.p-zone{background:#3E6E2B}
 /* Témoignages */
 .tem-grille{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
 .tem{margin:0;background:#fff;border:1px solid var(--trait);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:16px}
@@ -535,3 +535,66 @@ body{line-height:1.65}
 @media (max-width:560px){.marque-slogan,.marque-sep{display:none}}
 @media (min-width:1061px){.menu a:not(.bouton),.sous-menu-bouton{font-size:14px}}
 .sous-menu a strong{font-size:14px}.sous-menu a span{font-size:12.5px}
+
+/* ===== Habillage aux couleurs du logo OSV (prune, feuille, soleil, terre, eau) ===== */
+:root{--ruban:linear-gradient(90deg,var(--prune) 0 20%,var(--feuille) 20% 40%,var(--soleil) 40% 60%,var(--terre) 60% 80%,var(--eau) 80% 100%)}
+a{color:var(--prune)}a:hover{color:var(--terre)}
+h2{color:var(--vert)}
+.bouton{background:var(--prune);color:#fff;border-radius:999px;padding:0 26px;box-shadow:0 6px 16px rgba(94,45,134,.18)}
+.bouton:hover{background:var(--vert);color:#fff}
+.lien-fleche{color:var(--prune);border-bottom-color:var(--terre)}
+/* ruban multicolore : signature visuelle */
+.entete{position:sticky}
+.entete::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:4px;background:var(--ruban)}
+.pied{position:relative}
+.pied::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:var(--ruban)}
+.bandeau-page{position:relative}
+.bandeau-page::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--ruban)}
+/* petits titres avec un filet terre */
+.surtitre{display:inline-flex;align-items:center;gap:10px;color:var(--terre);letter-spacing:.08em;text-transform:uppercase;font-size:12px;font-weight:700}
+.surtitre::before{content:"";width:26px;height:2px;background:currentColor;flex:none}
+/* sections : alternance de fonds chauds et motifs discrets */
+.ac-section{position:relative;overflow:hidden}
+.ac-section.ac-blanc{background:#fff}
+.ac-section:not(.ac-blanc):not(.ac-bleu){background:var(--sable)}
+.ac-section:not(.ac-blanc):not(.ac-bleu)::before{content:"";position:absolute;right:-140px;top:-140px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(94,45,134,.07),rgba(94,45,134,0) 70%);pointer-events:none}
+.ac-section:not(.ac-blanc):not(.ac-bleu)::after{content:"";position:absolute;left:-60px;bottom:-60px;width:260px;height:260px;background-image:radial-gradient(rgba(169,99,42,.22) 1.4px,transparent 1.6px);background-size:18px 18px;pointer-events:none;mask-image:radial-gradient(circle,#000 40%,transparent 72%);-webkit-mask-image:radial-gradient(circle,#000 40%,transparent 72%)}
+.ac-section>.bloc{position:relative;z-index:1}
+.ac-bleu{background:var(--vert);background-image:radial-gradient(rgba(255,255,255,.07) 1.2px,transparent 1.4px);background-size:22px 22px}
+/* chiffres clés : une couleur du logo par case */
+.ac-chiffres li{border-left-width:4px}
+.ac-chiffres li:nth-child(5n+1){border-left-color:var(--prune)}.ac-chiffres li:nth-child(5n+2){border-left-color:var(--feuille)}.ac-chiffres li:nth-child(5n+3){border-left-color:var(--terre)}.ac-chiffres li:nth-child(5n+4){border-left-color:var(--eau)}
+.ac-chiffres li b,.ac-chiffres li strong{color:var(--vert)}
+/* domaines : chaque domaine garde sa couleur */
+.ac-domaines li a{position:relative}
+.ac-domaines li img,.ac-domaines .ac-dom-vide{border-radius:14px;border-bottom:4px solid var(--c,var(--prune))}
+.ac-domaines li:nth-child(7n+1){--c:var(--prune)}.ac-domaines li:nth-child(7n+2){--c:var(--eau)}.ac-domaines li:nth-child(7n+3){--c:var(--feuille)}.ac-domaines li:nth-child(7n+4){--c:var(--soleil)}.ac-domaines li:nth-child(7n+5){--c:var(--terre)}.ac-domaines li:nth-child(7n+6){--c:#6E8B3D}.ac-domaines li:nth-child(7n+7){--c:#4A5568}
+.ac-dom-vide{background:var(--c,var(--prune));opacity:.9}
+.dg-carte:nth-child(7n+1){--c:var(--prune)}.dg-carte:nth-child(7n+2){--c:var(--eau)}.dg-carte:nth-child(7n+3){--c:var(--feuille)}.dg-carte:nth-child(7n+4){--c:var(--soleil)}.dg-carte:nth-child(7n+5){--c:var(--terre)}.dg-carte:nth-child(7n+6){--c:#6E8B3D}.dg-carte:nth-child(7n+7){--c:#4A5568}
+.dg-carte{border-top:4px solid var(--c,var(--prune))}
+.dg-image-vide{background:var(--c,var(--prune))}
+.dg-image-vide span{border-bottom-color:rgba(255,255,255,.6)}
+/* cartes : relief léger au survol */
+.ac-carte,.carte,.dg-carte{transition:transform .2s,box-shadow .2s}
+.ac-carte:hover,.carte:hover,.dg-carte:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(45,38,64,.10)}
+.ac-carte img,.carte img{border-radius:12px 12px 0 0}
+/* pages intérieures */
+.vm-mission{border-top-color:var(--prune)}
+.dp-pilier:nth-child(3n+1){border-top-color:var(--prune)}.dp-pilier:nth-child(3n+2){border-top-color:var(--feuille)}.dp-pilier:nth-child(3n+3){border-top-color:var(--terre)}
+.dom-resume{border-left-color:var(--terre)}
+.objectifs .num{background:var(--clair);color:var(--prune)}
+.portefeuille{border-top:4px solid transparent;border-image:var(--ruban) 1}
+.portefeuille td:first-child{color:var(--prune)}
+.menu a:not(.bouton)::after{background:var(--terre)}
+.menu a:not(.bouton):hover,.menu a[aria-current="page"]:not(.bouton){color:var(--prune);background:var(--clair)}
+.menu a.menu-partenaire{border-color:var(--prune);color:var(--prune);border-radius:999px}
+.menu a.menu-partenaire:hover{background:var(--prune);color:#fff}
+.sous-menu{border-top-color:var(--prune)}
+/* textes un peu plus petits */
+h2{font-size:clamp(1.5rem,2.6vw,2.05rem)}
+.marque-nom{font-size:19px}
+@media (prefers-reduced-motion:reduce){.ac-carte,.carte,.dg-carte{transition:none}}
+.pied{color:#D8D2E2}.pied a{color:#EDE7F3}.pied a:hover{color:var(--or)}
+.bandeau-page{background:var(--vert);background-image:radial-gradient(rgba(255,255,255,.06) 1.2px,transparent 1.4px);background-size:22px 22px}
+.ac-bleu a,.ac-bleu .lien-fleche{color:#fff;border-bottom-color:var(--or)}
+.ac-bleu a:hover{color:var(--or)}
