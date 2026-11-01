@@ -664,3 +664,20 @@ h2{font-size:clamp(1.5rem,2.6vw,2.05rem)}
 .dc-lien{display:inline-block;margin-top:12px;font-size:13px;font-weight:700;color:var(--prune);text-decoration:none;border-bottom:2px solid var(--terre);padding-bottom:1px}
 .dc-lien:hover{color:var(--terre)}
 @media (max-width:700px){.dc-lien{margin-top:8px;font-size:12px}}
+
+/* ===== Notre parcours : ligne du temps ===== */
+.parcours-intro{max-width:760px;color:#4A5160;margin:-6px 0 34px}
+.parcours-intro strong{color:var(--prune)}
+.frise-osv{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:22px;position:relative}
+.frise-osv::before{content:"";position:absolute;left:0;right:0;top:34px;border-top:2px dashed rgba(94,45,134,.35)}
+.frise-osv li{position:relative;display:flex;flex-direction:column;gap:6px;padding-top:0}
+.fo-date{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--terre);min-height:18px}
+.fo-point{width:18px;height:18px;border-radius:50%;background:#fff;border:4px solid var(--c,var(--prune));box-shadow:0 0 0 5px #fff;margin:6px 0 8px;position:relative;z-index:1}
+.frise-osv li:nth-child(5n+1){--c:var(--prune)}.frise-osv li:nth-child(5n+2){--c:var(--feuille)}.frise-osv li:nth-child(5n+3){--c:var(--soleil)}.frise-osv li:nth-child(5n+4){--c:var(--terre)}.frise-osv li:nth-child(5n+5){--c:var(--eau)}
+.frise-osv li:last-child .fo-point{animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 5px #fff,0 0 0 6px rgba(44,127,184,.45)}100%{box-shadow:0 0 0 5px #fff,0 0 0 18px rgba(44,127,184,0)}}
+.fo-titre{font-size:15px;color:var(--vert);line-height:1.3}
+.fo-texte{font-size:13px;color:#5B6675;line-height:1.5}
+@media (max-width:900px){.frise-osv{grid-template-columns:1fr;gap:18px;padding-left:30px}.frise-osv::before{top:0;bottom:0;left:8px;right:auto;border-top:0;border-left:2px dashed rgba(94,45,134,.35)}.fo-point{position:absolute;left:-30px;top:0;margin:0}}
+@media (prefers-reduced-motion:reduce){.frise-osv li:last-child .fo-point{animation:none}}
+.ac-section.ac-blanc.parcours{background-position:right 3% top 24px}

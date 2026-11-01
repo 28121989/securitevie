@@ -135,6 +135,31 @@ content:
           - name: legende
             label: Légende
             type: string
+  - name: parcours
+    label: Notre parcours (ligne du temps de l'accueil)
+    type: file
+    path: _data/parcours.yml
+    fields:
+      - name: titre
+        label: Titre
+        type: string
+      - name: intro
+        label: Texte d'introduction
+        type: text
+      - name: etapes
+        label: Étapes
+        type: object
+        list: true
+        fields:
+          - name: date
+            label: Date
+            type: string
+          - name: titre
+            label: Titre
+            type: string
+          - name: texte
+            label: Texte court
+            type: text
   - name: diaporama
     label: Photos du diaporama (accueil)
     type: file

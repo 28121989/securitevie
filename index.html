@@ -55,6 +55,13 @@ seo_titre: "ONG Sécurité Vie (OSV) – ONG humanitaire à Yamoussoukro, Côte 
 {% endfor %}</ul>
 </div></section>
 
+{% assign pc = site.data.parcours %}{% if pc.etapes and pc.etapes.size > 0 %}
+<section class="ac-section ac-blanc parcours" aria-labelledby="t-parcours"><div class="bloc">
+<div class="ac-entete"><div><p class="surtitre">Notre parcours</p><h2 id="t-parcours">{{ pc.titre }}</h2></div><a class="lien-fleche" href="{{ '/realisations/' | relative_url }}">Tous nos projets →</a></div>
+<p class="parcours-intro">{{ pc.intro }} <strong>{{ site.activites.size }} projets menés à ce jour.</strong></p>
+<ol class="frise-osv">{% for e in pc.etapes %}<li><span class="fo-date">{{ e.date }}</span><span class="fo-point" aria-hidden="true"></span><strong class="fo-titre">{{ e.titre }}</strong><span class="fo-texte">{{ e.texte }}</span></li>{% endfor %}</ol>
+</div></section>
+{% endif %}
 <section class="ac-section ac-blanc" aria-labelledby="t-domaines"><div class="bloc">
 <div class="ac-entete"><div><p class="surtitre">Nos domaines</p><h2 id="t-domaines">Sept domaines, une même mission</h2></div><a class="lien-fleche" href="{{ '/domaines/' | relative_url }}">Tout voir →</a></div>
 <ul class="ac-domaines">
