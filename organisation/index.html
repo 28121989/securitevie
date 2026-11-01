@@ -20,3 +20,17 @@ description: "Gouvernance et équipe de direction de l'ONG Sécurité Vie (OSV),
 {% for p in e.equipe %}<li>{% if p.photo and p.photo != "" %}<img src="{{ p.photo | relative_url }}" alt="">{% else %}<span class="equipe-initiales" aria-hidden="true">{{ p.nom | slice: 0 }}</span>{% endif %}<strong>{{ p.nom }}</strong><span>{{ p.fonction }}</span></li>
 {% endfor %}</ul>
 </div></section>
+
+{% if e.experts and e.experts.size > 0 %}
+<section class="section-page"><div class="bloc">
+<h2 class="titre-section">Notre pool d'experts</h2>
+{% if e.capacites %}<p class="experts-intro">{{ e.capacites }}</p>{% endif %}
+<ul class="experts">{% for x in e.experts %}<li><span class="ex-annees">{{ x.annees }}</span><strong>{{ x.profil }}</strong><span class="ex-texte">{{ x.texte }}</span></li>{% endfor %}</ul>
+</div></section>
+{% endif %}
+{% if e.moyens and e.moyens.size > 0 %}
+<section class="section-page blanc"><div class="bloc">
+<h2 class="titre-section">Nos moyens sur le terrain</h2>
+<ul class="moyens">{% for m in e.moyens %}<li>{{ m }}</li>{% endfor %}</ul>
+</div></section>
+{% endif %}

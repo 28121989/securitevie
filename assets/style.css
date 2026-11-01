@@ -683,3 +683,15 @@ h2{font-size:clamp(1.5rem,2.6vw,2.05rem)}
 .ac-section.ac-blanc.parcours{background-position:right 3% top 24px}
 .badge-attest{display:inline-block;font-size:11.5px;font-weight:700;color:var(--feuille);background:#EEF4EA;border:1px solid #CFE0C6;border-radius:999px;padding:3px 9px;white-space:nowrap}
 .carte .attest{font-size:12.5px;font-weight:700;color:var(--feuille);margin:6px 0 0}
+
+/* ===== Organisation : pool d'experts et moyens ===== */
+.experts-intro{max-width:760px;color:#4A5160;margin:0 0 28px}
+.experts{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.experts li{background:#fff;border:1px solid var(--trait);border-radius:14px;padding:18px 20px;display:flex;flex-direction:column;gap:6px;border-top:4px solid var(--c,var(--prune));box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 2px 4px rgba(45,38,64,.05),0 12px 26px rgba(45,38,64,.07)}
+.experts li:nth-child(5n+1){--c:var(--prune)}.experts li:nth-child(5n+2){--c:var(--feuille)}.experts li:nth-child(5n+3){--c:var(--soleil)}.experts li:nth-child(5n+4){--c:var(--terre)}.experts li:nth-child(5n+5){--c:var(--eau)}
+.ex-annees{align-self:flex-start;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--terre);background:#F7EFE6;border-radius:999px;padding:3px 10px}
+.experts strong{font-size:15px;color:var(--vert)}
+.ex-texte{font-size:13px;color:#5B6675;line-height:1.5}
+.moyens{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.moyens li{position:relative;padding:12px 14px 12px 38px;background:var(--sable);border-radius:10px;font-size:14px}
+.moyens li::before{content:"";position:absolute;left:14px;top:17px;width:10px;height:10px;border-radius:50%;border:2px dashed var(--terre)}

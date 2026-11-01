@@ -237,6 +237,27 @@ content:
           - name: photo
             label: Photo
             type: image
+      - name: capacites
+        label: Texte sur les capacités de l'équipe
+        type: text
+      - name: experts
+        label: Pool d'experts (par profil)
+        type: object
+        list: true
+        fields:
+          - name: profil
+            label: Profil
+            type: string
+          - name: annees
+            label: Expérience (ex. 10 ans et plus)
+            type: string
+          - name: texte
+            label: Texte court
+            type: text
+      - name: moyens
+        label: Moyens sur le terrain
+        type: string
+        list: true
   - name: zones
     label: Zones d'intervention
     type: file
