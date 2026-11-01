@@ -714,3 +714,15 @@ h2{font-size:clamp(1.5rem,2.6vw,2.05rem)}
 .eq-atouts li::before{content:"";position:absolute;left:2px;top:7px;width:6px;height:6px;border-radius:50%;background:var(--c,var(--prune))}
 .statut-legal{max-width:820px;background:var(--sable);border-left:4px solid var(--prune);border-radius:0 10px 10px 0;padding:14px 18px;font-size:13.5px;margin:0 0 26px}
 .statut-legal strong{display:block;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--terre);margin-bottom:4px}
+
+/* ===== Diaporama : légende transparente, posée directement sur la photo ===== */
+.heros.avec-diapos .diapos::after{content:"";position:absolute;left:0;right:0;bottom:0;height:58%;z-index:2;pointer-events:none;background:linear-gradient(to top,rgba(20,16,32,.66) 0%,rgba(20,16,32,.38) 45%,rgba(20,16,32,0) 100%)}
+.diapo-carte{background:transparent;box-shadow:none;border-radius:0;padding:2px 0 2px 20px;max-width:620px;overflow:visible}
+.diapo-carte::before{left:0;right:auto;top:0;bottom:0;width:4px;height:auto;border-radius:4px;background:linear-gradient(180deg,var(--prune) 0 20%,var(--feuille) 20% 40%,var(--soleil) 40% 60%,var(--terre) 60% 80%,var(--eau) 80% 100%)}
+.dc-rubrique{color:#F4D98B;text-shadow:0 1px 3px rgba(0,0,0,.45)}
+.dc-titre{color:#fff;font-size:24px;text-shadow:0 2px 10px rgba(0,0,0,.45)}
+.dc-contexte{color:rgba(255,255,255,.9);text-shadow:0 1px 4px rgba(0,0,0,.5)}
+.dc-lien{color:#fff;border-bottom-color:var(--soleil);text-shadow:0 1px 4px rgba(0,0,0,.5)}
+.dc-lien:hover{color:#F4D98B}
+@media (max-width:700px){.dc-titre{font-size:18px}.diapo-carte{padding-left:14px}.heros.avec-diapos .diapos::after{height:70%}}
+@media (max-width:700px){.heros.avec-diapos .bloc.diapo-carte-bloc{bottom:78px}}
